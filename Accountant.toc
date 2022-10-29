@@ -1,0 +1,36 @@
+## Interface: 100000
+## Title: Accountant
+## Version: 10.0.0.0.0
+## Author: tfmonk
+## AuthorCredit: Urnati & Dajin
+## Description: Logs where your WoW gold goes
+## DefaultState: enabled
+## RequiredDeps:
+## SavedVariables: Accountant_SaveData,Accountant_Options,Accountant_MinimapDB
+## X-Embeds:
+## X-Credits: Thorismud
+## X-Category: Information
+## X-Website: https://github.com/tfmonk/Accountant/issues
+## X-Email: accountant-wow@googlegroups.com
+## X-License: All rights reserved (See license.txt)
+
+
+Libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+Libs\AceAddon-3.0\AceAddon-3.0.xml
+Libs\AceGUI-3.0\AceGUI-3.0.xml
+Libs\AceLocale-3.0\AceLocale-3.0.xml
+Libs\AceConsole-3.0\AceConsole-3.0.xml
+Libs\AceDB-3.0\AceDB-3.0.xml
+Libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+Libs\LibDBIcon-1.0\LibDBIcon-1.0\LibDBIcon-1.0.lua
+Libs\AceConfig-3.0\AceConfig-3.0.xml
+Libs\AceConfig-3.0\AceConfigDialog-3.0\AceConfigDialog-3.0.xml
+
+
+Locale\enUS.lua
+
+
+AccountantData.lua
+Accountant.lua
+Accountant.xml

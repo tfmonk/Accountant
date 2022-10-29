@@ -1,0 +1,62 @@
+v. 9.0.1.0.0
+
+- Updated TOC and added dark background.
+
+----------------------------------------------------------------------------------------------------------
+v.8.0.1.16
+
+- Fixed LUA error when opening mail
+
+----------------------------------------------------------------------------------------------------------
+
+v.8.0.1.15
+
+- Fixed the "All chars" tab not displaying the right values
+
+- Changed the position for the total value text
+
+----------------------------------------------------------------------------------------------------------
+
+v.8.0.1.14
+
+- Added localization that I forgot to add
+
+----------------------------------------------------------------------------------------------------------
+
+v.8.0.1.13
+
+- Added toggleable net profit/loss button for the minimap button in the config
+
+- Fixed week tab not displaying the right start day
+
+----------------------------------------------------------------------------------------------------------
+
+v.8.0.1.12
+
+- Should have fixed accountant not showing up in data broker addons
+
+----------------------------------------------------------------------------------------------------------
+
+v.8.0.1.11
+
+- Rewrote the plugin for some functionality
+
+- toggleable minimap button added
+
+- Minimap button is now easier to move around
+
+- Localization changed, need help with translating again
+
+----------------------------------------------------------------------------------------------------------
+
+V. 8.0.1.01
+
+- Added config button to toggle login message
+
+----------------------------------------------------------------------------------------------------------
+
+v.8.0.1
+
+- Started to update the addon for newer versions
+
+----------------------------------------------------------------------------------------------------------
