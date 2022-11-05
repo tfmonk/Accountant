@@ -17,7 +17,7 @@ SC.DEV = true;
 
 SC.data = nil;
 SC.MaxRows = 15
-SC.AllCharsMaxRows = 50 -- Per the rows implemented in the XML
+SC.AllCharsMaxRows = 60 -- Per the rows implemented in the XML
 SC.mode = "";
 SC.refund_mode = "";
 SC.sender = "";
@@ -2032,47 +2032,45 @@ function SC.GetCashForAllToons(for_display)
 	local total = 0
 	local cachebox = 0
 
-	for char,charvalue in next,Accountant_SaveData do
-		-- Find all players of the faction(s) requested
-		faction = Accountant_SaveData[char]["options"]["faction"]
-		if faction then
-		else
-			faction = "not set"
-		end
-		if (MatchRealm(char, SC.Realm) ~= nil)
-			and (( (faction == L["Alliance"])
-					and (SC.ShowAlliance == true) )
-				or ( (faction == L["Horde"])
-					and (SC.ShowHorde == true) ))
-		then
-			str_pos = strfind(char, SC.DIVIDER)
-			strtmp = strsub(char, str_pos+1) -- remove the realm and dash
-			if for_display then
-			   getglobal("AccountantFrameRow" ..i.."Title"):SetText(strtmp);
-			end
-			if Accountant_SaveData[char]["options"]["totalcash"] ~= nil then
-					-- poss cachebox does not exist if the user has not logged onto the toon yet
-					cachebox = (Accountant_SaveData[char]["options"]["cachebox"] or 0)
-				total = Accountant_SaveData[char]["options"]["totalcash"] - cachebox
-				alltotal = alltotal + total
-				if for_display then
-					getglobal("AccountantFrameRow" ..i.."In"):SetText(
-						SC.NiceCash(total, false, false));
-					getglobal("AccountantFrameRow" ..i.."Out"):SetText(
-						Accountant_SaveData[char]["options"]["date"]);
-				end
+		for char,charvalue in next,Accountant_SaveData do
+			-- Find all players of the faction(s) requested
+			faction = Accountant_SaveData[char]["options"]["faction"]
+			if faction then
 			else
-				if for_display then
-					getglobal("AccountantFrameRow" ..i.."In"):SetText("Unknown");
-				end
+				faction = "not set"
 			end
-			i=i+1;
-			if i > SC.MaxRows then
-				SC.Print("ERROR: Too many characters saved. Please delete some in options!! ")
-				return 0 -- we really have no idea what the real values is...
+			if (MatchRealm(char, SC.Realm) ~= nil)
+				and (( (faction == L["Alliance"])
+						and (SC.ShowAlliance == true) )
+					or ( (faction == L["Horde"])
+						and (SC.ShowHorde == true) ))
+			then
+				str_pos = strfind(char, SC.DIVIDER)
+				strtmp = strsub(char, str_pos+1) -- remove the realm and dash
+				if for_display and (i <= SC.MaxRows) then
+					getglobal("AccountantFrameRow" ..i.."Title"):SetText(strtmp);
+				end
+				if Accountant_SaveData[char]["options"]["totalcash"] ~= nil then
+						-- poss cachebox does not exist if the user has not logged onto the toon yet
+					cachebox = (Accountant_SaveData[char]["options"]["cachebox"] or 0)
+					total = Accountant_SaveData[char]["options"]["totalcash"] - cachebox
+					alltotal = alltotal + total
+					if for_display and (i <= SC.MaxRows) then
+						getglobal("AccountantFrameRow" ..i.."In"):SetText(SC.NiceCash(total, false, false));
+						getglobal("AccountantFrameRow" ..i.."Out"):SetText(Accountant_SaveData[char]["options"]["date"]);
+					end
+				else
+					if for_display and ( i <= SC.MaxRows ) then
+						getglobal("AccountantFrameRow" ..i.."In"):SetText("Unknown");
+					end
+				end		
+				if i > SC.AllCharsMaxRows then
+					SC.Print("ERROR: Too many (60+) characters saved. Please delete some in options!! ")
+					return 0 -- we really have no idea what the real values is...
+				end
+				i=i+1;
 			end
 		end
-	end
 
 	return alltotal
 end

@@ -9,6 +9,7 @@
 			<OnClick>Accountant.Tab_OnClick(self);</OnClick>
 		</Scripts>
 	</Button>
+
 	<FontString name="AccountantTextTemplate" inherits="GameFontHighlightSmall" virtual="true">
 		<Size>
 			<AbsDimension x="100" y="10" />
@@ -62,7 +63,7 @@
 						</Anchor>
 					</Anchors>
 				</FontString>
-				<Texture file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+				<Texture file="Interface\AuctionFrame\UI-DialogBox-Border">
 					<Size>
 						<AbsDimension x="480" y="19" />
 					</Size>
