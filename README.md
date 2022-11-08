@@ -35,8 +35,7 @@ Please use: [https://github.com/tfmonk/Accountant/issues](https://github.com/tf
 
 
 ## Localization 
-Please help Localize Account by submitting a new feature request using the GitHub Issues link above.
-
+Please help Localize Accountant by submitting a the translation here [Localization Page](https://www.curseforge.com/wow/addons/accountant/localization)
 
 ## Donations
 It's not necessary, but if you feel like supporting the development I'll gladly accept any amount.
