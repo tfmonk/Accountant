@@ -1,5 +1,6 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("Accountant", "ruRU", false)
 if not L then return end
+
 --ACCLOC_TITLE
 L["Accountant"]	= true
 
@@ -49,7 +50,7 @@ L["All Chars"] = "Все персонажи"
 
 
 --ACCLOC_STARTWEEK
-L["Start of Week"] = true
+L["Start of Week"] = "Начало недели"
 L["Sunday"] = "Воскресенье"
 L["Monday"] = "Понедельник"
 L["Tuesday"] = "Вторник"
