@@ -68,7 +68,6 @@ L["Right-Click"] = "Rechtsklick"
 L["Left-Click"] = "Linksklick"
 L["Remove"] = "Entfernen"
 L["Merge"] = true
-L[" --> "] = true
 L["Toggle"] = "Umschalten"
 L["Minimap"] = "Minikarte"
 L["Button"] = "Knopf"

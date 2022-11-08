@@ -68,7 +68,6 @@ L["Right-Click"] = nil
 L["Left-Click"] = nil
 L["Remove"] = nil
 L["Merge"] = nil
-L[" --> "] = nil
 L["Toggle"] = nil
 L["Minimap"] = nil
 L["Button"] = nil

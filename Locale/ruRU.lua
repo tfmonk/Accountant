@@ -69,7 +69,6 @@ L["Right-Click"] = true
 L["Left-Click"] = true
 L["Remove"] = true
 L["Merge"] = true
-L[" --> "] = true
 L["Toggle"] = true
 L["Minimap"] = true
 L["Button"] = true
