@@ -18,7 +18,7 @@ L["Updated"] = "Actualizado"
 L["Alliance"] = "Alianza"
 L["Horde"] = "Horda"
 
---ACCLOC_LOOT in spanish
+--ACCLOC_LOOT
 L["Loot"] = "Botín"
 L["Quest Rewards"] = "Recompensas de misión"
 L["Merchants"] = "Mercaderes"
@@ -38,7 +38,7 @@ L["Garrison / Class Hall"] = true
 
 -- Buttons
 L["Clear Data"] = true
-L["Exit"] = "Salir"
+L["Exit"] = "Salida"
 
 -- Tabs
 L["Session"] = true

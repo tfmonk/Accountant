@@ -1,24 +1,25 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("Accountant", "itIT", false)
 if not L then return end
---ACCLOC_TITLE
+
+--ACCLOC_TITLE translate below to italian
 L["Accountant"]	= true
 
-L["Net Profit / Loss"] = true
-L["Net Loss"] = true
-L["Net Profit"] = true
-L["Source"] = true
-L["Revenue"] = true
-L["Expenditures"] = true
-L["Week Start"] = true
-L["Sum Total"] = true
-L["Character"] = true
-L["character"] = true
-L["Money"] = true
-L["Updated"] = true
-L["Alliance"] = true
-L["Horde"] = true
+L["Net Profit / Loss"] = "Profitto Netto / Perdita"
+L["Net Loss"] = "Perdita Netta"
+L["Net Profit"] = "Profitto Netto"
+L["Source"] = "Fonte"
+L["Revenue"] = "Reddito"
+L["Expenditures"] = "Spese"
+L["Week Start"] = "Inizio Settimana"
+L["Sum Total"] = "Somma Totale"
+L["Character"] = "Personaggio"
+L["character"] = "personaggio"
+L["Money"] = "Denaro"
+L["Updated"] = "Aggiornato"
+L["Alliance"] = "Alleanza"
+L["Horde"] = "Orda"
 
---ACCLOC_LOOT
+--ACCLOC_LOOT 
 L["Loot"] = true
 L["Quest Rewards"] = true
 L["Merchants"] = true
@@ -37,25 +38,25 @@ L["Transmogrify"] = true
 L["Garrison / Class Hall"] = true
 
 -- Buttons
-L["Clear Data"] = true
-L["Exit"] = true
+L["Clear Data"] = "Cancella dati"
+L["Exit"] = "Uscita"
 
 -- Tabs
-L["Session"] = true
-L["Day"] = true
-L["Week"] = true
-L["Total"] = true
-L["All Chars"] = true
+L["Session"] = "Sessione"
+L["Day"] = "Giorno"
+L["Week"] = "Settimana"
+L["Total"] = "Totale"
+L["All Chars"] = "Tutti Personaggi"
 
 --ACCLOC_STARTWEEK
 L["Start of Week"] = true
-L["Sunday"] = true
-L["Monday"] = true
-L["Tuesday"] = true
-L["Wednesday"] = true
-L["Thursday"] = true
-L["Friday"] = true
-L["Saturday"] = true
+L["Sunday"] = "Domenica"
+L["Monday"] = "Lunedi"
+L["Tuesday"] = "Martedi"
+L["Wednesday"] = "Mercoledi"
+L["Thursday"] = "Giovedi"
+L["Friday"] = "Vendredi"
+L["Saturday"] = "Sabato"
 L["complete"] = true
 
 -- Misc

@@ -37,25 +37,25 @@ L["Transmogrify"] = true
 L["Garrison / Class Hall"] = true
 
 -- Buttons
-L["Clear Data"] = true
-L["Exit"] = true
+L["Clear Data"] = "Apagar Dados"
+L["Exit"] = "Saída"
 
 -- Tabs
-L["Session"] = true
-L["Day"] = true
-L["Week"] = true
-L["Total"] = true
+L["Session"] = "Sessão"
+L["Day"] = "Dia"
+L["Week"] = "Semana"
+L["Total"] = "Total"
 L["All Chars"] = true
 
 --ACCLOC_STARTWEEK
 L["Start of Week"] = true
-L["Sunday"] = true
-L["Monday"] = true
-L["Tuesday"] = true
-L["Wednesday"] = true
-L["Thursday"] = true
-L["Friday"] = true
-L["Saturday"] = true
+L["Sunday"] = "Domingo"
+L["Monday"] = "Segunda-feira"
+L["Tuesday"] = "Terça-feira"
+L["Wednesday"] = "Quarta-feira"
+L["Thursday"] = "Quinta-feira"
+L["Friday"] = "Sexta-feira"
+L["Saturday"] = "Sábado"
 L["complete"] = true
 
 -- Misc

@@ -3,7 +3,6 @@ if not L then return end
 --ACCLOC_TITLE
 L["Accountant"]	= true
 
---translate to french
 L["Net Profit / Loss"] = "Bénéfice net / Perte"
 L["Net Loss"] = "Perte nette"
 L["Net Profit"] = "Bénéfice net"
