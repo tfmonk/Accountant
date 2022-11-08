@@ -1,144 +1,100 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("Accountant", "ruRU", false)
 if not L then return end
 
---ACCLOC_TITLE
-L["Accountant"]	= true
-
-L["Net Profit / Loss"] = "Чистая прибыль / убыток"
+L["%sDrag%s to move this button"] = "%sПеретащить%s чтобы изменить положение этой кнопки"
+L["%sLeft-Click%s to open the main window"] = "%sЛевый клик%s чтобы открыть главное окно"
+L["%sRight-Click%s to open the config window"] = "%sПравый клик%s чтобы открыть окно настроек"
+L["Accountant"] = "Счетовод"
+L["Accountant allows you to track where your gold is going."] = "Счетовод позволяет отследить куда уходит твое золото"
+L["Accountant: Can not merge a character to itself!!"] = "Счетовод: Невозможно объединить персонажа с самим собой!"
+L["Accountant: Change to week day "] = "Счетовод: Изменить на день недели"
+L["Accountant: Clear data complete"] = "Счетовод: Очистка данных завершена"
+L["Accountant: Merge Character of "] = "Счетовод: Объединить персонажа "
+L["Accountant: Remove of "] = "Счетовод: Удаление"
+L["Accountant: You can not remove yourself!"] = "Счетовод: Нельзя удалить самого себя!"
+L["All Chars"] = "Все персонажи"
+L["Alliance"] = "Альянс"
+L["Are you sure you want to reset the data? This can't be undone"] = true 
+L["Auction House"] = "Аукцион"
+L["Auction successful:"] = "Успешный аукцион:"
+L["Azerite Reforging"] = true 
+L["Black Market"] = "Черный рынок"
+L["Change the day of the week that accountant uses. This resets the start of week totals."] = "Изменить день недели который использует Счетовод. Это сбросит итого на начало недели."
+L["Change the transparancy of the accountant window"] = "Изменить прозрачность окна Счетовода"
+L["Change transparancy"] = "Изменить прозрачность"
+L["Character"] = "Персонаж"
+L["Character Merge"] = "Объединить персонажа"
+L["Clear Data"] = "Очистить данные"
+L["Clear data for all realms"] = true 
+L["Clear the Accountant data for all characters"] = true 
+L["complete"] = "завершено"
+L["Configure minimap button"] = "Настройки кнопки у мини-карты"
+L["Day"] = "День"
+L["Display minimap button"] = "Отображать кнопку у мини-карты"
+L["Display money on minimap button"] = "Отображать деньги на кнопке у мини-карты"
+L["Display the minimap button"] = "Отображать кнопку у мини-карты"
+L["Displays the above selected net profit/loss on the minimap button"] = "Отображает ранее выбранные чистую прибыль / чистый убыток на кнопке у мини-карты"
+L["Expenditures"] = "Расходы"
+L["Friday"] = "Пятница"
+L["From:"] = "Из"
+L["Garrison / Class Hall"] = true 
+L["Horde"] = "Орда"
+L["It is recommended that you save your accountant data before proceeding, just in case."] = "Рекомендуется сохранить ваши данные пере продолжением, на всякий случай."
+L["Left-Click"] = "ЛКМ"
+L["Loaded"] = "Загружено"
+L["Loot"] = "Добыча"
+L["Mail"] = "Почта"
+L["Merchants"] = "Торговцы"
+L["Merge Accountant data from one character to another"] = true 
+L["Merge Accountant data from this character"] = "Объединить данные Счетовода от данного персонажа"
+L["Merge Accountant data to this .character"] = "Объединить данные Счетовода к этому .персонаж"
+L["Merge Character"] = "Объединить персонажа"
+L["Merge Toon"] = "Объединить персонажа"
+L["Minimap button"] = "Кнопка у мини-карты"
+L["Minimap Options"] = "Настройки мини-карты"
+L["Monday"] = "Понедельник"
+L["Money"] = "Деньги"
 L["Net Loss"] = "Чистый убыток"
 L["Net Profit"] = "Чистая прибыль"
-L["Source"] = "Источник"
-L["Revenue"] = "Доход"
-L["Expenditures"] = "Расход"
-L["Week Start"] = "Начало недели"
-L["Sum Total"] = "Итого"
-L["Character"] = "Персонаж"
-L["character"] = "персонаж"
-L["Money"] = "Деньги"
-L["Updated"] = "Обновлено"
-L["Alliance"] = "Альянс"
-L["Horde"] = "Орда"
-
---ACCLOC_LOOT
-L["Loot"] = "Добыча"
-L["Quest Rewards"] = "Награда за задание"
-L["Merchants"] = "Торговцы"
-L["Trade Window"] = "Окно обмена"
-L["Mail"] = "Почта"
-L["Training Costs"] = "Стоимость обучения"
-L["Taxi Fares"] = "Такси"
-L["Unknown"] = "Неизвестно"
-L["Repair Costs"] = "Стоимость ремонта"
-L["Auction House"] = "Аукцион"
-L["Other System"] = "Другие"
-L["Black Market"] = "Черный рынок"
+L["Net Profit / Loss"] = "Чистая прибыть / чистый убыток"
+L["New Accountant profile created for"] = "Новый профиль Счетовода создан для"
+L["No"] = true 
+L["NOTE: If you merge Accountant data to the character you are logged into session data will be lost. You should also log into the character you want to merge from. Otherwise week data may not be correct (depending on when you last logged into that character)"] = "ВНИМАНИЕ: Если вы объедините данные Счетовода к персонажу за которого вы авторизированы данные за текущую сессию будут утеряны. Вы также должны авторизироваться за персонажа с которого хотите объединить данные, иначе данные могут быть некорректными (в зависимости от того, когда вы в последний раз авторизировались за данного персонажа)"
+L["Outbid"] = "Перебить цену"
+L["Quest Rewards"] = "Награды за задания"
 L["Reforging"] = "Перековка"
-L["Azerite Reforging"] = "Перековка азерита"
-L["Transmogrify"] = "Трансмогрификация"
-L["Garrison / Class Hall"] = "Гарнизон / Классовый зал"
-
--- Buttons
-L["Clear Data"] = "Очистить данные"
-L["Exit"] = "Выход"
-
--- Tabs
-L["Session"] = "Сессия"
-L["Day"] = "День"
-L["Week"] = "Неделя"
-L["Total"] = "Всего"
-L["All Chars"] = "Все персонажи"
-
-
---ACCLOC_STARTWEEK
-L["Start of Week"] = "Начало недели"
-L["Sunday"] = "Воскресенье"
-L["Monday"] = "Понедельник"
-L["Tuesday"] = "Вторник"
-L["Wednesday"] = "Среда"
-L["Thursday"] = "Четверг"
-L["Friday"] = "Пятница"
+L["Remove"] = "Удалить"
+L["Remove Accountant data for the selected character"] = "Удалить данные Счетовода для выбранного персонажа"
+L["Remove Character"] = "Удалить персонажа"
+L["Repair Costs"] = "Траты на ремонт"
+L["Revenue"] = "Прибыль"
 L["Saturday"] = "Суббота"
-L["complete"] = "Полный"
-
--- Misc
-L["Are you sure you want to reset the"] = true
-L["New Accountant profile created for"] = true
-L["Loaded Accountant profile for"] = true
-L["Loaded"] = true
-L["Right-Click"] = true
-L["Left-Click"] = true
-L["Remove"] = true
-L["Merge"] = true
-L["Toggle"] = true
-L["Minimap"] = true
-L["Button"] = true
-
--- Mail strings
-L["Auction successful:"] = "Аукцион состоялся:"
-L["Outbid"] = true
-
--- Key Bindings headers
---BINDING_NAME_ACCOUNTANTTOG
-L["Toggle Accountant"] = true
-
--- Config strings
-L["Minimap button"] = true
-L["Accountant allows you to track where your gold is going."]	= true
-L["Configure minimap button"]	= true
-L["Display minimap button"]	= true
-L["Display the minimap button"]	= true
-L["Transparancy"]	= true
-L["Change the transparancy of the accountant window"]	= true
-L["Change transparancy"]	= true
-L["Change the day of the week that accountant uses. This resets the start of week totals."] = true
-L["Week Day"] = true
-L["Select the day of the week."] = true
-L["Change to week day"]	= true
-L["Character Management"] = true
-L["It is recommended that you save your accountant data before proceeding, just in case."] = true
-L["Manage the Accountant data of your character(s)."] = true
-L["Remove Character"] = true
-L["Remove Accountant data for the selected character"] = true
-L["You can not remove yourself!"] = true
-L["Remove of "] = true
-L["Remove Accountant data for this character"] = true
-L["This will remove the Accountant data for the selected character. You must exit the game or log into another character to save the changes."] = true
-L["Ignore"] = true
-L["Ignore Accountant data for this character. Do not collect data."] = true
-L["Merge Character"] = true
-L["Character Merge"] = true
-L["From:"] = true
-L["To:"] = true
-L["to"] = true
-L["Can not merge a character to itself!!"] = true
-L["Merge Accountant data from this character"] = true
-L["Merge Accountant data to this .character"] = true
-L[" "] = true
-L["NOTE: If you merge Accountant data to the character you are logged into session data will be lost. You should also log into the character you want to merge from. Otherwise week data may not be correct (depending on when you last logged into that character)"] = true
-L["Clear the Accountant data for all characters"] = true
-L["Clear data for all realms"] = true
-
---New Strings by Dajn 8.0.1
-L["Minimap Options"] = true
-L["Remove Toon"] = true
-L["Merge Toon"] = true
-L["Transparancy"] = true
-L["%sLeft-Click%s to open the main window"] = true
-L["%sRight-Click%s to open the config window"] = true
-L["%sDrag%s to move this button"] = true
-L["Accountant: Clear data complete"] = true
-L["Tracks your revenues / expenditures"] = true
-L["Accountant: You can not remove yourself!"] = true
-L["Accountant: Remove of "] = true
-L["Accountant: Can not merge a character to itself!!"] = true
-L["Accountant: Merge Character of "] = true
-L["Accountant: Change to week day "] = true
-L["Display money on minimap button"] = true
-L["Displays the above selected net profit/loss on the minimap button"] = true
-L["Select minimap mode"] = true
-L["Select what mode you want the minimap to show (NOTE: Only works if the botton below is checked)"] = true
-L["Total Gold "] = true
-L["Are you sure you want to reset the data? This can't be undone"] = true
-L["Yes"] = true
-L["No"] = true
-L["Cancel"] = true
+L["Select minimap mode"] = "Выбрать режим мини-карты"
+L["Select the day of the week."] = "Выбрать день недели."
+L["Select what mode you want the minimap to show (NOTE: Only works if the botton below is checked)"] = "Выберите желаемый режим отображения на мини-карте (ВНИМАНИЕ: Работает только если переключатель ниже отмечен)"
+L["Session"] = "Сессия"
+L["Source"] = "Источник"
+L["Start of Week"] = "Начало недели"
+L["Sum Total"] = "Итого"
+L["Sunday"] = "Воскресенье"
+L["Taxi Fares"] = "Плата за полеты"
+L["This will remove the Accountant data for the selected character. You must exit the game or log into another character to save the changes."] = "Это удалить данные Счетовода для выбранного персонажа. Вам необходимо выйти из игры или авторизироваться за другого персонажа для сохранения изменений."
+L["Thursday"] = "Четверг"
+L["to"] = "к"
+L["To:"] = "К:"
+L["Toggle Accountant"] = "Переключить Счетовода"
+L["Total"] = "Итого"
+L["Total Gold "] = true 
+L["Tracks your revenues / expenditures"] = "Отслеживает ваши доходы / расходы"
+L["Trade Window"] = "Окно обмена"
+L["Training Costs"] = "Затраты на обучение"
+L["Transmogrify"] = "Трансмогрификация"
+L["Transparancy"] = "Прозрачносить"
+L["Tuesday"] = "Вторник"
+L["Unknown"] = "Неизвестно"
+L["Updated"] = "Обновлено"
+L["Wednesday"] = "Среда"
+L["Week"] = "Неделя"
+L["Week Day"] = "День Недели"
+L["Week Start"] = "Начало Недели"
+L["Yes"] = true 

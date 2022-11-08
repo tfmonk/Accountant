@@ -585,7 +585,7 @@ name = L["Merge Toon"],
 		mergetoon = {
 			order = 23, type = "execute",
 			name = L["Merge Character"],
-			desc = L[" "],
+			desc = L["Merge Accountant data from one character to another"],
 			func = function()
 				SC.ToonMerge (merge_toon_from_name, merge_toon_to_name);
 			end,
