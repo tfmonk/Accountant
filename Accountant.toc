@@ -26,7 +26,7 @@ Libs\LibDBIcon-1.0\LibDBIcon-1.0.lua
 Libs\AceConfig-3.0\AceConfig-3.0.xml
 Libs\AceConfig-3.0\AceConfigDialog-3.0\AceConfigDialog-3.0.xml
 
-Locale\enUS.lua
+Locale\Locales.xml
 
 AccountantData.lua
 Accountant.lua

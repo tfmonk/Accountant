@@ -1,4 +1,4 @@
-local L = LibStub("AceLocale-3.0"):NewLocale("Accountant", "enUS", true)
+local L = LibStub("AceLocale-3.0"):NewLocale("Accountant", "koKR", false)
 if not L then return end
 --ACCLOC_TITLE
 L["Accountant"]	= true

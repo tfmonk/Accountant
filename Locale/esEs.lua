@@ -1,44 +1,44 @@
-local L = LibStub("AceLocale-3.0"):NewLocale("Accountant", "enUS", true)
+local L = LibStub("AceLocale-3.0"):NewLocale("Accountant", "esES", false)
 if not L then return end
 --ACCLOC_TITLE
 L["Accountant"]	= true
 
-L["Net Profit / Loss"] = true
-L["Net Loss"] = true
-L["Net Profit"] = true
-L["Source"] = true
-L["Revenue"] = true
-L["Expenditures"] = true
-L["Week Start"] = true
-L["Sum Total"] = true
-L["Character"] = true
-L["character"] = true
-L["Money"] = true
-L["Updated"] = true
-L["Alliance"] = true
-L["Horde"] = true
+L["Net Profit / Loss"] = "Ganancia / Pérdida Neta"
+L["Net Loss"] = "Pérdida Neta"
+L["Net Profit"] = "Ganancia Neta"
+L["Source"] = "Fuente"
+L["Revenue"] = "Ingresos"
+L["Expenditures"] = "Gastos"
+L["Week Start"] = "Comienzo de la Semana"
+L["Sum Total"] = "Total"
+L["Character"] = "Personaje"
+L["character"] = "personaje"
+L["Money"] = "Dinero"
+L["Updated"] = "Actualizado"
+L["Alliance"] = "Alianza"
+L["Horde"] = "Horda"
 
---ACCLOC_LOOT
-L["Loot"] = true
-L["Quest Rewards"] = true
-L["Merchants"] = true
-L["Trade Window"] = true
-L["Mail"] = true
-L["Training Costs"] = true
-L["Taxi Fares"] = true
-L["Unknown"] = true
-L["Repair Costs"] = true
-L["Auction House"] = true
-L["Other System"] = true
-L["Black Market"] = true
-L["Reforging"] = true
-L["Azerite Reforging"] = true
+--ACCLOC_LOOT in spanish
+L["Loot"] = "Botín"
+L["Quest Rewards"] = "Recompensas de misión"
+L["Merchants"] = "Mercaderes"
+L["Trade Window"] = "Ventana de comercio"
+L["Mail"] = "Correo"
+L["Training Costs"] = "Costo de entrenamiento"
+L["Taxi Fares"] = "Tarifas de taxi"
+L["Unknown"] = "Desconocido"
+L["Repair Costs"] = "Costo de reparación"
+L["Auction House"] = "Casa de subastas"
+L["Other System"] = "Otro sistema"
+L["Black Market"] = "Mercado negro"
+L["Reforging"] = "Reforja"
+L["Azerite Reforging"] = "Reforja de azerita"
 L["Transmogrify"] = true
 L["Garrison / Class Hall"] = true
 
 -- Buttons
 L["Clear Data"] = true
-L["Exit"] = true
+L["Exit"] = "Salir"
 
 -- Tabs
 L["Session"] = true
@@ -47,15 +47,16 @@ L["Week"] = true
 L["Total"] = true
 L["All Chars"] = true
 
+
 --ACCLOC_STARTWEEK
-L["Start of Week"] = true
-L["Sunday"] = true
-L["Monday"] = true
-L["Tuesday"] = true
-L["Wednesday"] = true
-L["Thursday"] = true
-L["Friday"] = true
-L["Saturday"] = true
+L["Start of Week"] = "Comienzo de la semana"
+L["Sunday"] = "Domingo"
+L["Monday"] = "Lunes"
+L["Tuesday"] = "Martes"
+L["Wednesday"] = "Miércoles"
+L["Thursday"] = "Jueves"
+L["Friday"] = "Viernes"
+L["Saturday"] = "Sábado"
 L["complete"] = true
 
 -- Misc

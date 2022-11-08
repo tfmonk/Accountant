@@ -1,62 +1,63 @@
-local L = LibStub("AceLocale-3.0"):NewLocale("Accountant", "enUS", true)
+local L = LibStub("AceLocale-3.0"):NewLocale("Accountant", "ruRU", false)
 if not L then return end
 --ACCLOC_TITLE
 L["Accountant"]	= true
 
-L["Net Profit / Loss"] = true
-L["Net Loss"] = true
-L["Net Profit"] = true
-L["Source"] = true
-L["Revenue"] = true
-L["Expenditures"] = true
-L["Week Start"] = true
-L["Sum Total"] = true
-L["Character"] = true
-L["character"] = true
-L["Money"] = true
-L["Updated"] = true
-L["Alliance"] = true
-L["Horde"] = true
+L["Net Profit / Loss"] = "Чистая прибыль / убыток"
+L["Net Loss"] = "Чистый убыток"
+L["Net Profit"] = "Чистая прибыль"
+L["Source"] = "Источник"
+L["Revenue"] = "Доход"
+L["Expenditures"] = "Расход"
+L["Week Start"] = "Начало недели"
+L["Sum Total"] = "Итого"
+L["Character"] = "Персонаж"
+L["character"] = "персонаж"
+L["Money"] = "Деньги"
+L["Updated"] = "Обновлено"
+L["Alliance"] = "Альянс"
+L["Horde"] = "Орда"
 
 --ACCLOC_LOOT
-L["Loot"] = true
-L["Quest Rewards"] = true
-L["Merchants"] = true
-L["Trade Window"] = true
-L["Mail"] = true
-L["Training Costs"] = true
-L["Taxi Fares"] = true
-L["Unknown"] = true
-L["Repair Costs"] = true
-L["Auction House"] = true
-L["Other System"] = true
-L["Black Market"] = true
-L["Reforging"] = true
-L["Azerite Reforging"] = true
-L["Transmogrify"] = true
-L["Garrison / Class Hall"] = true
+L["Loot"] = "Добыча"
+L["Quest Rewards"] = "Награда за задание"
+L["Merchants"] = "Торговцы"
+L["Trade Window"] = "Окно обмена"
+L["Mail"] = "Почта"
+L["Training Costs"] = "Стоимость обучения"
+L["Taxi Fares"] = "Такси"
+L["Unknown"] = "Неизвестно"
+L["Repair Costs"] = "Стоимость ремонта"
+L["Auction House"] = "Аукцион"
+L["Other System"] = "Другие"
+L["Black Market"] = "Черный рынок"
+L["Reforging"] = "Перековка"
+L["Azerite Reforging"] = "Перековка азерита"
+L["Transmogrify"] = "Трансмогрификация"
+L["Garrison / Class Hall"] = "Гарнизон / Классовый зал"
 
 -- Buttons
-L["Clear Data"] = true
-L["Exit"] = true
+L["Clear Data"] = "Очистить данные"
+L["Exit"] = "Выход"
 
 -- Tabs
-L["Session"] = true
-L["Day"] = true
-L["Week"] = true
-L["Total"] = true
-L["All Chars"] = true
+L["Session"] = "Сессия"
+L["Day"] = "День"
+L["Week"] = "Неделя"
+L["Total"] = "Всего"
+L["All Chars"] = "Все персонажи"
+
 
 --ACCLOC_STARTWEEK
 L["Start of Week"] = true
-L["Sunday"] = true
-L["Monday"] = true
-L["Tuesday"] = true
-L["Wednesday"] = true
-L["Thursday"] = true
-L["Friday"] = true
-L["Saturday"] = true
-L["complete"] = true
+L["Sunday"] = "Воскресенье"
+L["Monday"] = "Понедельник"
+L["Tuesday"] = "Вторник"
+L["Wednesday"] = "Среда"
+L["Thursday"] = "Четверг"
+L["Friday"] = "Пятница"
+L["Saturday"] = "Суббота"
+L["complete"] = "Полный"
 
 -- Misc
 L["Are you sure you want to reset the"] = true
@@ -73,7 +74,7 @@ L["Minimap"] = true
 L["Button"] = true
 
 -- Mail strings
-L["Auction successful:"] = true
+L["Auction successful:"] = "Аукцион состоялся:"
 L["Outbid"] = true
 
 -- Key Bindings headers

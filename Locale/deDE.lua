@@ -1,61 +1,62 @@
-local L = LibStub("AceLocale-3.0"):NewLocale("Accountant", "enUS", true)
+local L = LibStub("AceLocale-3.0"):NewLocale("Accountant", "deDE", false)
 if not L then return end
 --ACCLOC_TITLE
 L["Accountant"]	= true
 
-L["Net Profit / Loss"] = true
-L["Net Loss"] = true
-L["Net Profit"] = true
-L["Source"] = true
-L["Revenue"] = true
-L["Expenditures"] = true
-L["Week Start"] = true
-L["Sum Total"] = true
-L["Character"] = true
-L["character"] = true
-L["Money"] = true
-L["Updated"] = true
-L["Alliance"] = true
-L["Horde"] = true
+L["Net Profit / Loss"] = "Netto Gewinn / Verlust"
+L["Net Loss"] = "Netto Verlust"
+L["Net Profit"] = "Netto Gewinn"
+L["Source"] = "Quelle"
+L["Revenue"] = "Einnahmen"
+L["Expenditures"] = "Ausgaben"
+L["Week Start"] = "Woche startet am"
+L["Sum Total"] = "Gesamt"
+L["Character"] = "Charakter"
+L["character"] = "Charakter"
+L["Money"] = "Geld"
+L["Updated"] = "Aktualisiert"
+L["Alliance"] = "Allianz"
+L["Horde"] = "Horde"
 
 --ACCLOC_LOOT
-L["Loot"] = true
-L["Quest Rewards"] = true
-L["Merchants"] = true
-L["Trade Window"] = true
-L["Mail"] = true
-L["Training Costs"] = true
-L["Taxi Fares"] = true
-L["Unknown"] = true
-L["Repair Costs"] = true
-L["Auction House"] = true
-L["Other System"] = true
-L["Black Market"] = true
-L["Reforging"] = true
-L["Azerite Reforging"] = true
-L["Transmogrify"] = true
-L["Garrison / Class Hall"] = true
+L["Loot"] = "Beute"
+L["Quest Rewards"] = "Quest Belohnungen"
+L["Merchants"] = "Händler"
+L["Trade Window"] = "Handelsfenster"
+L["Mail"] = "Briefkasten"
+L["Training Costs"] = "Trainingskosten"
+L["Taxi Fares"] = "Taxikosten"
+L["Unknown"] = "Unbekannt"
+L["Repair Costs"] = "Reparaturkosten"
+L["Auction House"] = "Auktionshaus"
+L["Other System"] = "Sonstiges"
+L["Black Market"] = "Schwarzmarkt"
+L["Reforging"] = "Umschmiedung"
+L["Azerite Reforging"] = "Azerit-Umschmiedung"
+L["Transmogrify"] = "Transmogrifizieren"
+L["Garrison / Class Hall"] = "Garnison / Klassenhalle"
 
 -- Buttons
-L["Clear Data"] = true
-L["Exit"] = true
+L["Clear Data"] = "Daten löschen"
+L["Exit"] = "Beenden"
+
 
 -- Tabs
-L["Session"] = true
-L["Day"] = true
-L["Week"] = true
-L["Total"] = true
-L["All Chars"] = true
+L["Session"] = "Sitzung"
+L["Day"] = "Tag"
+L["Week"] = "Woche"
+L["Total"] = "Gesamt"
+L["All Chars"] = "Alle Chars"
 
 --ACCLOC_STARTWEEK
 L["Start of Week"] = true
-L["Sunday"] = true
-L["Monday"] = true
-L["Tuesday"] = true
-L["Wednesday"] = true
-L["Thursday"] = true
-L["Friday"] = true
-L["Saturday"] = true
+L["Sunday"] = "Sonntag"
+L["Monday"] = "Montag"
+L["Tuesday"] = "Dienstag"
+L["Wednesday"] = "Mittwoch"
+L["Thursday"] = "Donnerstag"
+L["Friday"] = "Freitag"
+L["Saturday"] = "Samstag"
 L["complete"] = true
 
 -- Misc
@@ -65,7 +66,7 @@ L["Loaded Accountant profile for"] = true
 L["Loaded"] = true
 L["Right-Click"] = true
 L["Left-Click"] = true
-L["Remove"] = true
+L["Remove"] = "Entfernen"
 L["Merge"] = true
 L[" --> "] = true
 L["Toggle"] = true
