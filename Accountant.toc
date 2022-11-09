@@ -1,6 +1,6 @@
 ## Interface: 100000
 ## Title: Accountant
-## Version: 10.0.0.0.1
+## Version: 10.1.0
 ## Author: tfmonk
 ## AuthorCredit: Urnati & Dajin
 ## Description: Logs where your WoW gold goes
@@ -26,7 +26,7 @@ Libs\LibDBIcon-1.0\LibDBIcon-1.0.lua
 Libs\AceConfig-3.0\AceConfig-3.0.xml
 Libs\AceConfig-3.0\AceConfigDialog-3.0\AceConfigDialog-3.0.xml
 
-Locale\enUS.lua
+Locale\Locales.xml
 
 AccountantData.lua
 Accountant.lua

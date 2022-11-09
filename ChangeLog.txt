@@ -1,3 +1,58 @@
+
+----------------------------------------------------------------------------------------------------------
+
+v 10.1.0
+
+- Add support for localization using information provided on cureforge localization page - https://www.curseforge.com/wow/addons/accountant/localization
+
+- Reformmated Locale lua files to make it easier to export from curseforge localization page.
+
+- Removed redundant strings from Locale files.
+
+- Changed locale string " " to "Merge Accountant data from one character to another" to better reflect what its used for.
+
+- Add missing updates to ChangeLog.txt
+
+- Updated Accountant version number in TOC file to 10.1.0
+
+----------------------------------------------------------------------------------------------------------
+
+v 10.0.2
+
+- Change version number to make it easier to distingue updates seperate from game version to avoid confusion.
+
+- add README.md file to git repo
+
+----------------------------------------------------------------------------------------------------------
+
+v 10.0.0.0.1
+
+- Add fix to only display 15 characters on the All Character Tab to prevent errors with returning total for all characters on realm and removed some redundant libraries.
+
+----------------------------------------------------------------------------------------------------------
+
+v 10.0.0.0.0
+
+- Updated ACE3 Libs
+
+- Fixed issue with AccountantTabTemplate in Accountant.xml changed to inherit PanelTabButtonTemplate
+
+- Updated toc to 10.0.0.0.0
+
+----------------------------------------------------------------------------------------------------------
+
+v. 9.2.7.0.0
+
+- Updated TOC
+
+- Fixed formatting of Accountant.xml
+
+- Updated AccountantFrameHordeToggleButton to InterfaceOptionsCheckButtonTemplate
+
+- Updated AccountantFrameAllainceToggleButton to InterfaceOptionsCheckButtonTemplate
+
+----------------------------------------------------------------------------------------------------------
+
 v. 9.0.1.0.0
 
 - Updated TOC and added dark background.
