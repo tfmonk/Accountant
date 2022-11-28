@@ -1,6 +1,18 @@
 
 ----------------------------------------------------------------------------------------------------------
 
+v 10.1.2
+
+- Changed Interface version to 10002
+
+----------------------------------------------------------------------------------------------------------
+
+v 10.1.1
+
+- Revert faction name translation due to UnitFactionGroup returning English for faction name
+
+----------------------------------------------------------------------------------------------------------
+
 v 10.1.0
 
 - Add support for localization using information provided on cureforge localization page - https://www.curseforge.com/wow/addons/accountant/localization
