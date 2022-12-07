@@ -1,4 +1,4 @@
-local L = LibStub("AceLocale-3.0"):NewLocale("Accountant", "deDE", false)
+local L = LibStub("AceLocale-3.0"):NewLocale("Accountant", "deDE", true)
 if not L then return end
 
 L["%sDrag%s to move this button"] = "%sZiehen%s zum bewegen"
@@ -29,6 +29,7 @@ L["Clear data for all realms"] = true
 L["Clear the Accountant data for all characters"] = true 
 L["complete"] = "Vollständig"
 L["Configure minimap button"] = "Minikarten Knopf einstellen"
+L["Crafting Orders"] = true
 L["Day"] = "Tag"
 L["Display minimap button"] = "Zeige Minikarten Knopf"
 L["Display money on minimap button"] = "Zeige Geld auf Minikarten Knopf"
@@ -60,6 +61,7 @@ L["Net Profit / Loss"] = "Gewinn / Verlust"
 L["New Accountant profile created for"] = "Neues Buchhalter Profil erstellt für"
 L["No"] = "Nein"
 L["NOTE: If you merge Accountant data to the character you are logged into session data will be lost. You should also log into the character you want to merge from. Otherwise week data may not be correct (depending on when you last logged into that character)"] = true 
+L["Order Declined:"] = true 
 L["Outbid"] = "Überbieten"
 L["Quest Rewards"] = "Quest Belohnungen"
 L["Reforging"] = "Umschmieden"
