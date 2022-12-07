@@ -1,4 +1,4 @@
-local L = LibStub("AceLocale-3.0"):NewLocale("Accountant", "deDE", true)
+local L = LibStub("AceLocale-3.0"):NewLocale("Accountant", "deDE", false)
 if not L then return end
 
 L["%sDrag%s to move this button"] = "%sZiehen%s zum bewegen"
