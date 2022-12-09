@@ -88,6 +88,20 @@ function SC.DetectAhMail()
 	end
 end
 
+function SC.DetectCraftingOrder()
+	for i = 1, GetInboxNumItems() do
+		local a, b, sender, subject, money = GetInboxHeaderInfo(i);
+		if (sender ~= nil) then
+			if (string.find(subject, L["Order Declined:"]) ~= nil) then
+				SC.mode="IGNORE";
+				SC.refund_mode="CO";
+				SC.sender = Accountant.player;
+				return true;
+			end
+		end
+	end
+end
+
 function SC.ClearData()
 --
 -- Clear all data all modes
@@ -204,7 +218,7 @@ function SC.Button_makename()
 --
 -- Create the name so the right data can be looked up.
 --
-	acc_realm = GetRealmName();
+	acc_realm = GetRealmName():gsub('-',"");
 	acc_name = acc_realm..SC.DIVIDER..UnitName("player");
 	return acc_name;
 end
@@ -937,6 +951,11 @@ function SC.RegisterEvents(self)
 	self:RegisterEvent("AUCTION_HOUSE_SHOW");
 	self:RegisterEvent("AUCTION_HOUSE_CLOSED");
 
+	self:RegisterEvent("CRAFTINGORDERS_SHOW_CUSTOMER");
+	self:RegisterEvent("CRAFTINGORDERS_HIDE_CUSTOMER");
+	self:RegisterEvent("CRAFTINGORDERS_FULFILL_ORDER_RESPONSE")
+
+
 	self:RegisterEvent("BLACK_MARKET_OPEN");
 	self:RegisterEvent("BLACK_MARKET_CLOSE");
 
@@ -1052,7 +1071,7 @@ function SC.OnLoad()
 --
 -- Do all the setup needed on load of Accountant
 --
-	SC.Realm = GetRealmName();
+	SC.Realm = GetRealmName():gsub('-',"");
 	SC.Char = UnitName("player");
 	SC.Faction = UnitFactionGroup("player")
 	SC.player = SC.Realm..SC.DIVIDER..SC.Char;
@@ -1128,6 +1147,7 @@ function SC.LoadSavedData() -- Load the account data of the character that is be
 	SC.data["TRADE"] = {Title = L["Trade Window"]};
 	SC.data["MAIL"] = {Title = L["Mail"]};
 	SC.data["AH"] = {Title = L["Auction House"]};
+	SC.data["CO"] = {Title = L["Crafting Orders"]};
 	SC.data["TRAIN"] = {Title = L["Training Costs"]};
 	SC.data["TAXI"] = {Title = L["Taxi Fares"]};
 	SC.data["REPAIRS"] = {Title = L["Repair Costs"]};
@@ -1795,8 +1815,10 @@ function SC.OnEvent(event, arg1)
 --		SC.show_events = true
 	elseif event == "MAIL_INBOX_UPDATE" then
 		if SC.DetectAhMail() then
-	     SC.mode="AH";
-    else
+			SC.mode="AH";
+		elseif SC.DetectCraftingOrder() then
+			SC.mode="CO";
+    	else
 	     SC.mode = "MAIL";
   end
 	elseif event == "MAIL_CLOSED" then
@@ -1842,6 +1864,12 @@ function SC.OnEvent(event, arg1)
 		SC.mode = "";
 		--debug
 		--DEFAULT_CHAT_FRAME:AddMessage("Ding, something works again.!");
+	elseif event == "CRAFTINGORDERS_SHOW_CUSTOMER" then
+		SC.mode = "CO";
+	elseif event == "CRAFTINGORDERS_FULFILL_ORDER_RESPONSE" then
+		SC.mode = "CO";
+	elseif event == "CRAFTINGORDERS_HIDE_CUSTOMER" then
+		SC.mode = "";
 	elseif event == "PLAYER_MONEY" then
 		SC.UpdateLog();
 		SC:LDB_Update()

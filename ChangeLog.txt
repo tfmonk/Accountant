@@ -1,3 +1,10 @@
+v 10.2.0
+
+- Add new functionality to support for crafting orders.
+
+- Updated Russian and Chinese locales and added new locale strings to support crafting orders for all locales.
+
+- Fixxed issue for realms with a "-" in the name, (historical data will not be displayed, to display the old data update the Accountant.lua file in the WTF folder for the realm with the "-" in the name and remove it so Realm-Name becomes RealmName)
 
 ----------------------------------------------------------------------------------------------------------
 
