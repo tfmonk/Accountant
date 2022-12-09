@@ -953,8 +953,7 @@ function SC.RegisterEvents(self)
 
 	self:RegisterEvent("CRAFTINGORDERS_SHOW_CUSTOMER");
 	self:RegisterEvent("CRAFTINGORDERS_HIDE_CUSTOMER");
-	self:RegisterEvent("CRAFTINGORDERS_FULFILL_ORDER_RESPONSE")
-
+	self:RegisterEvent("CRAFTINGORDERS_FULFILL_ORDER_RESPONSE");
 
 	self:RegisterEvent("BLACK_MARKET_OPEN");
 	self:RegisterEvent("BLACK_MARKET_CLOSE");
