@@ -61,6 +61,7 @@ L["Net Profit / Loss"] = "순이익/손실"
 L["New Accountant profile created for"] = "다음에 대해 생성된 새  Accountant 프로필"
 L["No"] = true 
 L["NOTE: If you merge Accountant data to the character you are logged into session data will be lost. You should also log into the character you want to merge from. Otherwise week data may not be correct (depending on when you last logged into that character)"] = "참고: Accountant 데이터를 세션에 로그인한 캐릭터와 병합하면 데이터가 손실됩니다. 병합하려는 캐릭터도 로그인해야 합니다. 그렇지 않으면 주간 데이터가 올바르지 않을 수 있습니다(해당 캐릭터에 마지막으로 로그인한 시점에 따라 다름)."
+L["Order Canceled:"] = true 
 L["Order Declined:"] = true 
 L["Outbid"] = true 
 L["Quest Rewards"] = "퀘스트 보상"

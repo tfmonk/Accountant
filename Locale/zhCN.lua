@@ -61,6 +61,7 @@ L["Net Profit / Loss"] = "净 利润/亏损"
 L["New Accountant profile created for"] = "为创建的新Accountant配置文件"
 L["No"] = true 
 L["NOTE: If you merge Accountant data to the character you are logged into session data will be lost. You should also log into the character you want to merge from. Otherwise week data may not be correct (depending on when you last logged into that character)"] = "注意：如果将Accountant数据合并到您登录的角色，则一段数据将丢失。您还应该登录到要从中合并的角色。否则，周数据可能不正确（取决于您上次登录该角色的时间）"
+L["Order Canceled:"] = true 
 L["Order Declined:"] = true 
 L["Outbid"] = true 
 L["Quest Rewards"] = "任务奖励"
