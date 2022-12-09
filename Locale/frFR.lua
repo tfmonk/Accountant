@@ -61,6 +61,7 @@ L["Net Profit / Loss"] = "Bénéfice / perte net"
 L["New Accountant profile created for"] = "Nouveau profil Accountant créé pour"
 L["No"] = "Non"
 L["NOTE: If you merge Accountant data to the character you are logged into session data will be lost. You should also log into the character you want to merge from. Otherwise week data may not be correct (depending on when you last logged into that character)"] = "REMARQUE : Si vous fusionnez les données d'Accountant avec le personnage auquel vous êtes connecté, les données de session seront perdues. Vous devez également vous connecter au personnage à partir duquel vous souhaitez fusionner. Sinon, les données de la semaine peuvent ne pas être correctes (selon la date de votre dernière connexion à ce personnage)"
+L["Order Canceled:"] = true 
 L["Order Declined:"] = true 
 L["Outbid"] = "Surenchérir"
 L["Quest Rewards"] = "Récompenses de quête"

@@ -61,6 +61,7 @@ L["Net Profit / Loss"] = "Ganancia / Pérdida Neta"
 L["New Accountant profile created for"] = true 
 L["No"] = true 
 L["NOTE: If you merge Accountant data to the character you are logged into session data will be lost. You should also log into the character you want to merge from. Otherwise week data may not be correct (depending on when you last logged into that character)"] = true 
+L["Order Canceled:"] = true 
 L["Order Declined:"] = true 
 L["Outbid"] = true 
 L["Quest Rewards"] = "Recompensas de misión"

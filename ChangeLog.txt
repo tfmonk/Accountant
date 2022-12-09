@@ -1,3 +1,11 @@
+v 10.2.2
+
+- Updated crafting order functionality to properly handle the crafting order mail for canceled orders.
+
+- Fixed typo in change log for v 10.2.0
+
+----------------------------------------------------------------------------------------------------------
+
 v 10.2.1
 
 - add missing semi colon in Accountant.lua for line 956 CRAFTINGORDERS_FULFILL_ORDER_RESPONSE
@@ -10,7 +18,7 @@ v 10.2.0
 
 - Updated Russian and Chinese locales and added new locale strings to support crafting orders for all locales.
 
-- Fixxed issue for realms with a "-" in the name, (historical data will not be displayed, to display the old data update the Accountant.lua file in the WTF folder for the realm with the "-" in the name and remove it so Realm-Name becomes RealmName)
+- Fixed issue for realms with a "-" in the name, (historical data will not be displayed, to display the old data update the Accountant.lua file in the WTF folder for the realm with the "-" in the name and remove it so Realm-Name becomes RealmName)
 
 ----------------------------------------------------------------------------------------------------------
 

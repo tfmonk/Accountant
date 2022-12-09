@@ -61,6 +61,7 @@ L["Net Profit / Loss"] = "Чистая прибыль / убыток"
 L["New Accountant profile created for"] = "Новый профиль Счетовода создан для"
 L["No"] = "Нет"
 L["NOTE: If you merge Accountant data to the character you are logged into session data will be lost. You should also log into the character you want to merge from. Otherwise week data may not be correct (depending on when you last logged into that character)"] = "ВНИМАНИЕ: Если вы объедините данные Accountant к персонажу за которого вы авторизированы данные за текущую сессию будут утеряны. Вы также должны авторизироваться за персонажа с которого хотите объединить данные, иначе данные за неделю могут быть некорректными (в зависимости от того, когда вы в последний раз авторизировались за данного персонажа)"
+L["Order Canceled:"] = true 
 L["Order Declined:"] = true 
 L["Outbid"] = "Ваша ставка перебита"
 L["Quest Rewards"] = "Награды за задания"

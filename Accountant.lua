@@ -97,6 +97,11 @@ function SC.DetectCraftingOrder()
 				SC.refund_mode="CO";
 				SC.sender = Accountant.player;
 				return true;
+			elseif (string.find(subject, L["Order Canceled:"]) ~= nil) then
+				SC.mode="IGNORE";
+				SC.refund_mode="CO";
+				SC.sender = Accountant.player;
+				return true;
 			end
 		end
 	end
