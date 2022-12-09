@@ -1,6 +1,6 @@
 v 10.2.2
 
-- Updated crafting order functionality to properly handle the crafting order mail for cancelled orders.
+- Updated crafting order functionality to properly handle the crafting order mail for canceled orders.
 
 - Fixed typo in change log for v 10.2.0
 
