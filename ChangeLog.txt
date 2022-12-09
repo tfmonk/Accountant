@@ -1,3 +1,9 @@
+v 10.2.1
+
+- add missing semi colon in Accountant.lua for line 956 CRAFTINGORDERS_FULFILL_ORDER_RESPONSE
+
+----------------------------------------------------------------------------------------------------------
+
 v 10.2.0
 
 - Add new functionality to support for crafting orders.
