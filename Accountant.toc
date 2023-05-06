@@ -1,6 +1,6 @@
-## Interface: 100002
+## Interface: 100100
 ## Title: Accountant
-## Version: 10.2.2
+## Version: 10.2.3
 ## Author: tfmonk
 ## AuthorCredit: Urnati & Dajin
 ## Description: Logs where your WoW gold goes
