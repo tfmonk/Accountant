@@ -1,3 +1,11 @@
+v 10.2.6
+
+- Changed Interface version to 100207
+- Removed duplicate file load from toc causing an error (AceConfigDialog-3.0.xml)
+- Update GetAddOnMetadata api name to C_AddOns.GetAddOnMetadata due to api depreciation 
+
+----------------------------------------------------------------------------------------------------------
+
 v 10.2.5
 
 - Changed Interface version to 100200
