@@ -12,9 +12,9 @@ Accountant_SaveData = nil;
 -- Create a short cut
 local SC = Accountant
 
-SC.Version = tostring(GetAddOnMetadata("Accountant", "Version")) or "Unknown" -- "3.4.02";
-SC.AUTHOR = GetAddOnMetadata("Accountant", "Author") or "Unknown" --"urnati";
-SC.CREDAUTHOR = GetAddOnMetadata("Accountant", "AuthorCredit") or "Unknown" --"tfmonk";
+SC.Version = tostring(C_AddOns.GetAddOnMetadata("Accountant", "Version")) or "Unknown" -- "3.4.02";
+SC.AUTHOR = C_AddOns.GetAddOnMetadata("Accountant", "Author") or "Unknown" --"urnati";
+SC.CREDAUTHOR = C_AddOns.GetAddOnMetadata("Accountant", "AuthorCredit") or "Unknown" --"tfmonk";
 SCOUNTANT_OPTIONS_TITLE = "Accountant Options";
 SCOUNTANT_BUTTON_TOOLTIP = "Toggle Accountant";
 
