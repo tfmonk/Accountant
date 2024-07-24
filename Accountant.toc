@@ -1,14 +1,13 @@
-## Interface: 100207
+## Interface: 110000
 ## Title: Accountant
-## Version: 10.2.6
-## Author: tfmonk
-## AuthorCredit: Urnati & Dajin
-## Description: Logs where your WoW gold goes
+## Version: 10.2.7
+## Author: tfmonk 
+## Notes: Logs where your WoW gold goes
 ## DefaultState: enabled
 ## RequiredDeps:
 ## SavedVariables: Accountant_SaveData,Accountant_Options,Accountant_MinimapDB
 ## X-Embeds:
-## X-Credits: Thorismud
+## X-Credits: Urnati & Dajin & Thorismud
 ## X-Category: Information
 ## X-Website: https://github.com/tfmonk/Accountant/issues
 ## X-License: All rights reserved (See license)

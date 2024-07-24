@@ -14,7 +14,7 @@ local SC = Accountant
 
 SC.Version = tostring(C_AddOns.GetAddOnMetadata("Accountant", "Version")) or "Unknown" -- "3.4.02";
 SC.AUTHOR = C_AddOns.GetAddOnMetadata("Accountant", "Author") or "Unknown" --"urnati";
-SC.CREDAUTHOR = C_AddOns.GetAddOnMetadata("Accountant", "AuthorCredit") or "Unknown" --"tfmonk";
+SC.CREDAUTHOR = C_AddOns.GetAddOnMetadata("Accountant", "X-Credits") or "Unknown" --"tfmonk";
 SCOUNTANT_OPTIONS_TITLE = "Accountant Options";
 SCOUNTANT_BUTTON_TOOLTIP = "Toggle Accountant";
 
