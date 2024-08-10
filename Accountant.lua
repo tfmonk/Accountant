@@ -690,8 +690,7 @@ SC.LDBIcon = LibStub("LibDataBroker-1.1", true) and LibStub("LibDBIcon-1.0", tru
 				SC.LeftButton_OnClick();
 			else
 				if button == "RightButton" then
-					InterfaceOptionsFrame_OpenToCategory(AccOptionsFrame);
-					InterfaceOptionsFrame_OpenToCategory(AccOptionsFrame);
+					Settings.OpenToCategory("Accountant", true)
 				end
 			end
 		end,
