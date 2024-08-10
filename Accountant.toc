@@ -1,6 +1,6 @@
 ## Interface: 110000
 ## Title: Accountant
-## Version: 10.2.7
+## Version: 10.2.8
 ## Author: tfmonk 
 ## Notes: Logs where your WoW gold goes
 ## DefaultState: enabled

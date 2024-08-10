@@ -1,3 +1,9 @@
+v 10.2.8
+
+- Fix opening options from minimap button
+- Update Ace3 libraries
+----------------------------------------------------------------------------------------------------------
+
 v 10.2.7
 
 - Changed Interface version to 110000
