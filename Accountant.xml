@@ -63,6 +63,18 @@
 						</Anchor>
 					</Anchors>
 				</FontString>
+				<FontString name="$parentWarband" inherits="GameFontHighlightSmall">
+					<Size>
+						<AbsDimension x="150" y="14" />
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentOut" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
 				<Texture file="Interface\AuctionFrame\UI-DialogBox-Border">
 					<Size>
 						<AbsDimension x="480" y="19" />
@@ -150,7 +162,7 @@
 					<Anchors>
 						<Anchor point="TOPLEFT" relativePoint="TOPLEFT">
 							<Offset>
-								<AbsDimension x="24" y="-123" />
+								<AbsDimension x="24" y="-130" />
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -175,6 +187,18 @@
 					</Size>
 					<Anchors>
 						<Anchor point="LEFT" relativeTo="$parentIn" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentWarband" inherits="GameFontHighlight" justifyH = "CENTER">
+					<Size>
+						<AbsDimension x="150" y="14" />
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentOut" relativePoint="RIGHT">
 							<Offset>
 								<AbsDimension x="0" y="0" />
 							</Offset>
@@ -211,6 +235,15 @@
 						</Anchor>
 					</Anchors>
 				</FontString>
+				<FontString name="$parentTotalWarband" inherits="AccountantTextTemplate" justifyH = "LEFT">
+					<Anchors>
+						<Anchor point="TOP" relativeTo="$parentTotalOut" relativePoint="BOTTOM">
+							<Offset>
+								<AbsDimension x="0" y="-3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
 				<!--  -->
 				<FontString name="$parentTotalOutValue" inherits="AccountantValueTemplate" justifyH = "RIGHT">
 					<Anchors>
@@ -221,10 +254,19 @@
 						</Anchor>
 					</Anchors>
 				</FontString>
+				<FontString name="$parentTotalWarbandValue" inherits="AccountantValueTemplate" justifyH = "RIGHT">
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentTotalWarband" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
 				<!-- Net of Revenue - Expense -->
 				<FontString name="$parentTotalFlow" inherits="AccountantTextTemplate" justifyH = "LEFT">
 					<Anchors>
-						<Anchor point="TOP" relativeTo="$parentTotalOut" relativePoint="BOTTOM">
+						<Anchor point="TOP" relativeTo="$parentTotalWarband" relativePoint="BOTTOM">
 							<Offset>
 								<AbsDimension x="0" y="-3" />
 							</Offset>

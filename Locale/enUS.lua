@@ -101,3 +101,5 @@ L["Week"] = true
 L["Week Day"] = true
 L["Week Start"] = true
 L["Yes"] = true
+L["Bank"] = true
+L["Warband Bank"] = true
