@@ -2004,6 +2004,7 @@ function SC.GetDetailForToons(mode, for_display)
 	local TotalRowOut
 	local TotalIn = 0
 	local TotalOut = 0
+	warbandgold = C_Bank.FetchDepositedMoney(2);
 
     for key,value in next,SC.data do
         TotalRowIn = 0;
@@ -2019,9 +2020,36 @@ function SC.GetDetailForToons(mode, for_display)
                      and (SC.ShowHorde == true) ))
                and ( SC.show_toons == player
                   or SC.show_toons == SC.AllDropdown ) then
-               TotalRowIn = TotalRowIn + Accountant_SaveData[player]["data"][key][mode].In;
 
-               TotalRowOut = TotalRowOut + Accountant_SaveData[player]["data"][key][mode].Out;
+				--[[if (key == "BANK") then
+					totalBankOut = Accountant_SaveData[player]["data"][key]["Total"].Out
+					totalBankIn = Accountant_SaveData[player]["data"][key]["Total"].In
+					modein = Accountant_SaveData[player]["data"][key][mode].In
+					modeout = Accountant_SaveData[player]["data"][key][mode].Out
+
+					if totalBankOut == 0 then
+						totalBankOut = warbandgold
+					end
+
+					if ((totalBankIn - (totalBankOut - warbandgold)) < 0) then
+						TotalRowIn = 0
+					end
+
+					if ((totalBankOut - warbandgold) >= 0) then -- 10 - 5 = 5 > 0 == true
+						if (((modeout - modein) - warbandgold) == 0) then -- 0 - 0 - 5 < 0 == true
+							TotalRowOut = modeout
+						else
+							TotalRowOut = 0
+						end
+
+					end			
+				else]]--
+					TotalRowIn = TotalRowIn + Accountant_SaveData[player]["data"][key][mode].In;
+
+					TotalRowOut = TotalRowOut + Accountant_SaveData[player]["data"][key][mode].Out;	
+				--end
+
+ 
             end
         end
 
@@ -2047,6 +2075,7 @@ function SC.GetCashForToons()
 	local faction = ""
 	local cachebox = 0
 	local alltotal = 0
+	local warbandBankBalance = C_Bank.FetchDepositedMoney(2)
 
    -- collect the total for the toon(s) selected
     for player in next,Accountant_SaveData do
@@ -2061,7 +2090,7 @@ function SC.GetCashForToons()
 				-- cachebox may not exist if the user has not logged onto the toon yet
 				cachebox = (Accountant_SaveData[player]["options"]["cachebox"] or 0)
 			alltotal = alltotal
-				+ Accountant_SaveData[player]["options"]["totalcash"] - cachebox
+				+ Accountant_SaveData[player]["options"]["totalcash"] - cachebox + warbandBankBalance
 		end
 	end
 
@@ -2143,7 +2172,7 @@ function SC.ShowValues() -- Set the Accountant values based on the user selectio
 		--mode = SC.log_modes[SC.current_tab];
 
 		TotalIn, TotalOut = SC.GetDetailForToons(SC.log_modes[SC.current_tab], true)
-		diff = ((TotalOut-TotalIn-TotalWarband) or 0);
+		diff = ((TotalOut-TotalIn) or 0);
 
 		AccountantFrameTotalInValue:SetText(SC.NiceCash(TotalIn, true, false));
 		AccountantFrameTotalOutValue:SetText(SC.NiceCash(TotalOut, true, false));
