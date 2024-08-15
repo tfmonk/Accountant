@@ -1,3 +1,10 @@
+v 11.0.0
+
+- add New bank category to track bank deposits and withdrawals, and bank tab purchases.
+- add Warband bank gold to the display and total Gold 
+
+----------------------------------------------------------------------------------------------------------
+
 v 10.2.8
 
 - Fix opening options from minimap button

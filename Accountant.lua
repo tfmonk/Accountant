@@ -985,6 +985,10 @@ function SC.RegisterEvents(self)
 
 	self:RegisterEvent("TRANSMOGRIFY_OPEN");  -- added to track transmoggin cost
 	self:RegisterEvent("TRANSMOGRIFY_CLOSE");
+
+	self:RegisterEvent("BANKFRAME_CLOSED");
+	self:RegisterEvent("BANKFRAME_OPENED");
+
 end
 
 function SC.SetLabels()
@@ -1024,11 +1028,14 @@ function SC.SetLabels()
 		AccountantFrameSource:SetText(L["Character"]);
 		AccountantFrameIn:SetText(L["Money"]);
 		AccountantFrameOut:SetText(L["Updated"]);
+		AccountantFrameWarband:SetText(L["Warband Bank"]);
 		AccountantFrameTotalIn:SetText("");
 		AccountantFrameTotalOut:SetText("");
+		AccountantFrameTotalWarband:SetText(L["Warband Bank"]..":");
 		AccountantFrameTotalFlow:SetText("");
 		AccountantFrameTotalInValue:SetText("");
 		AccountantFrameTotalOutValue:SetText("");
+		AccountantFrameTotalWarbandValue:SetText("");
 		AccountantFrameTotalFlowValue:SetText("");
 		AccountantFrameMoneyTotal:SetText(L["Total Gold "]..":");
 		--AccountantFrameResetButton:Hide();
@@ -1057,8 +1064,10 @@ function SC.SetLabels()
 	AccountantFrameSource:SetText(L["Source"]);
 	AccountantFrameIn:SetText(L["Revenue"]);
 	AccountantFrameOut:SetText(L["Expenditures"]);
+	AccountantFrameWarband:SetText(L["Warband Bank"]);
 	AccountantFrameTotalIn:SetText(L["Revenue"]..":");
 	AccountantFrameTotalOut:SetText(L["Expenditures"]..":");
+	AccountantFrameTotalWarband:SetText(L["Warband Bank"]..":");
 	AccountantFrameTotalFlow:SetText(L["Net Profit / Loss"]..":");
 
 	-- Row Labels (auto generate)
@@ -1157,6 +1166,7 @@ function SC.LoadSavedData() -- Load the account data of the character that is be
 	SC.data["OTHER"] = {Title = L["Unknown"]};
 	SC.data["BMAH"] = {Title = L["Black Market"]};
 	SC.data["TMG"] = {Title = L["Transmogrify"]};
+	SC.data["BANK"] = {Title = L["Bank"]};
 	--SC.data["RFRG"] = {Title = L["Azerite Reforging"]};
 	SC.data["GARR"] = {Title = L["Garrison / Class Hall"]};
   --	SC.data["RFRG"] = {Title = ACCLOC_RFRG};	--Reforging was removed from the game
@@ -1873,6 +1883,10 @@ function SC.OnEvent(event, arg1)
 		SC.mode = "CO";
 	elseif event == "CRAFTINGORDERS_HIDE_CUSTOMER" then
 		SC.mode = "";
+	elseif event == "BANKFRAME_OPENED" then
+		SC.mode = "BANK";
+	elseif event == "BANKFRAME_CLOSED" then
+		SC.mode = "";
 	elseif event == "PLAYER_MONEY" then
 		SC.UpdateLog();
 		SC:LDB_Update()
@@ -2033,6 +2047,7 @@ function SC.GetCashForToons()
 	local faction = ""
 	local cachebox = 0
 	local alltotal = 0
+	local warbandBankBalance = C_Bank.FetchDepositedMoney(2)
 
    -- collect the total for the toon(s) selected
     for player in next,Accountant_SaveData do
@@ -2047,7 +2062,7 @@ function SC.GetCashForToons()
 				-- cachebox may not exist if the user has not logged onto the toon yet
 				cachebox = (Accountant_SaveData[player]["options"]["cachebox"] or 0)
 			alltotal = alltotal
-				+ Accountant_SaveData[player]["options"]["totalcash"] - cachebox
+				+ Accountant_SaveData[player]["options"]["totalcash"] - cachebox + warbandBankBalance
 		end
 	end
 
@@ -2125,6 +2140,7 @@ function SC.ShowValues() -- Set the Accountant values based on the user selectio
 	if SC.current_tab ~= 5 then
 		TotalIn = 0;
 		TotalOut = 0;
+		TotalWarband = C_Bank.FetchDepositedMoney(2);
 		--mode = SC.log_modes[SC.current_tab];
 
 		TotalIn, TotalOut = SC.GetDetailForToons(SC.log_modes[SC.current_tab], true)
@@ -2132,6 +2148,7 @@ function SC.ShowValues() -- Set the Accountant values based on the user selectio
 
 		AccountantFrameTotalInValue:SetText(SC.NiceCash(TotalIn, true, false));
 		AccountantFrameTotalOutValue:SetText(SC.NiceCash(TotalOut, true, false));
+		AccountantFrameTotalWarbandValue:SetText(SC.NiceCash(TotalWarband, true, false));
 		AccountantFrameTotalFlowValue:SetText(SC.NiceCash(diff, true, false))
 
 		if diff > 0 then
