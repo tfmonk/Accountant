@@ -2136,11 +2136,13 @@ function SC.ShowValues() -- Set the Accountant values based on the user selectio
 	-- Make sure we start fresh
 	alltotal = 0;
 
+	TotalWarband = C_Bank.FetchDepositedMoney(2);
+
 	SC.SetLabels();
 	if SC.current_tab ~= 5 then
 		TotalIn = 0;
 		TotalOut = 0;
-		TotalWarband = C_Bank.FetchDepositedMoney(2);
+		
 		--mode = SC.log_modes[SC.current_tab];
 
 		TotalIn, TotalOut = SC.GetDetailForToons(SC.log_modes[SC.current_tab], true)
@@ -2148,7 +2150,6 @@ function SC.ShowValues() -- Set the Accountant values based on the user selectio
 
 		AccountantFrameTotalInValue:SetText(SC.NiceCash(TotalIn, true, false));
 		AccountantFrameTotalOutValue:SetText(SC.NiceCash(TotalOut, true, false));
-		AccountantFrameTotalWarbandValue:SetText(SC.NiceCash(TotalWarband, true, false));
 		AccountantFrameTotalFlowValue:SetText(SC.NiceCash(diff, true, false))
 
 		if diff > 0 then
@@ -2186,6 +2187,7 @@ function SC.ShowValues() -- Set the Accountant values based on the user selectio
 	end
 
 	local cash = SC.NiceCash(alltotal, true, true)
+	AccountantFrameTotalWarbandValue:SetText(SC.NiceCash(TotalWarband, true, false));
 	AccountantFrameMoneyTotalValue:SetText(cash);
 
 	PanelTemplates_SetTab(AccountantFrame, SC.current_tab);
