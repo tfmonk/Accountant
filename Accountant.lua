@@ -2062,7 +2062,7 @@ function SC.GetCashForToons()
 				-- cachebox may not exist if the user has not logged onto the toon yet
 				cachebox = (Accountant_SaveData[player]["options"]["cachebox"] or 0)
 			alltotal = alltotal
-				+ Accountant_SaveData[player]["options"]["totalcash"] - cachebox + warbandBankBalance
+				+ Accountant_SaveData[player]["options"]["totalcash"] - cachebox
 		end
 	end
 
@@ -2186,7 +2186,7 @@ function SC.ShowValues() -- Set the Accountant values based on the user selectio
 		AccountantFrameExtraValue:SetText("");
 	end
 
-	local cash = SC.NiceCash(alltotal, true, true)
+	local cash = SC.NiceCash(alltotal + TotalWarband, true, true)
 	AccountantFrameTotalWarbandValue:SetText(SC.NiceCash(TotalWarband, true, false));
 	AccountantFrameMoneyTotalValue:SetText(cash);
 
