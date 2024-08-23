@@ -1,3 +1,9 @@
+v 11.0.1
+
+- Fix warband gold been added multiple times to total gold.
+
+----------------------------------------------------------------------------------------------------------
+
 v 11.0.0
 
 - add New bank category to track bank deposits and withdrawals, and bank tab purchases.
