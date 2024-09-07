@@ -30,6 +30,8 @@ SC.show_toons = ""
 SC.could_repair = false;
 SC.can_repair = "";
 SC.repair_cost, SC.repair_money = 0,0;
+SC.bankopened = false;
+SC.warbandbankaction = false;
 
 local Accountant_RepairAllItems_old;
 local Accountant_CursorHasItem_old;
@@ -963,6 +965,7 @@ function SC.RegisterEvents(self)
 	self:RegisterEvent("BLACK_MARKET_CLOSE");
 
 	self:RegisterEvent("PLAYER_MONEY");
+	self:RegisterEvent("ACCOUNT_MONEY");
 
 	self:RegisterEvent("UNIT_NAME_UPDATE");
 	self:RegisterEvent("PLAYER_ENTERING_WORLD");
@@ -1028,7 +1031,6 @@ function SC.SetLabels()
 		AccountantFrameSource:SetText(L["Character"]);
 		AccountantFrameIn:SetText(L["Money"]);
 		AccountantFrameOut:SetText(L["Updated"]);
-		AccountantFrameWarband:SetText(L["Warband Bank"]);
 		AccountantFrameTotalIn:SetText("");
 		AccountantFrameTotalOut:SetText("");
 		AccountantFrameTotalWarband:SetText(L["Warband Bank"]..":");
@@ -1064,7 +1066,6 @@ function SC.SetLabels()
 	AccountantFrameSource:SetText(L["Source"]);
 	AccountantFrameIn:SetText(L["Revenue"]);
 	AccountantFrameOut:SetText(L["Expenditures"]);
-	AccountantFrameWarband:SetText(L["Warband Bank"]);
 	AccountantFrameTotalIn:SetText(L["Revenue"]..":");
 	AccountantFrameTotalOut:SetText(L["Expenditures"]..":");
 	AccountantFrameTotalWarband:SetText(L["Warband Bank"]..":");
@@ -1884,12 +1885,31 @@ function SC.OnEvent(event, arg1)
 	elseif event == "CRAFTINGORDERS_HIDE_CUSTOMER" then
 		SC.mode = "";
 	elseif event == "BANKFRAME_OPENED" then
-		SC.mode = "BANK";
+		SC.bankcash = GetMoney();
+		SC.bankwarbandcash = C_Bank.FetchDepositedMoney(2)
+		SC.warbandbankaction = false
+		SC.bankopened = true
 	elseif event == "BANKFRAME_CLOSED" then
+		if not SC.warbandbankaction then
+			SC.mode = "BANK"
+			SC.UpdateLog();
+		end
+		SC.bankopened = false
+		SC.warbandbankaction = false
 		SC.mode = "";
+	elseif event == "ACCOUNT_MONEY" then
+		SC.bankcashafter = GetMoney();
+		SC.warbandbankaction = true
+		SC.bankwarbandcashafter = C_Bank.FetchDepositedMoney(2)
+		if not ((SC.bankwarbandcash - SC.bankwarbandcashafter) + (SC.bankcash - SC.bankcashafter)) == 0 then --likely warband bank deposit if they match/tab purchase if they dont?
+			SC.mode = "BANK"
+			SC.UpdateLog();		
+		end
 	elseif event == "PLAYER_MONEY" then
-		SC.UpdateLog();
-		SC:LDB_Update()
+		if not SC.bankopened then
+			SC.UpdateLog();
+			SC:LDB_Update()
+		end
 	end
 	if SC.verbose and SC.mode ~= oldmode then
         SC.Print("Accountant mode changed to '"..SC.mode.."'");
