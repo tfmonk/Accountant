@@ -1,8 +1,9 @@
 ## Interface: 110002
 ## Title: Accountant
-## Version: 11.0.1
+## Version: 11.0.2
 ## Author: tfmonk 
 ## Notes: Logs where your WoW gold goes
+## IconTexture: Interface/AddOns/Accountant/Artwork/AccountantButton.blp
 ## DefaultState: enabled
 ## RequiredDeps:
 ## SavedVariables: Accountant_SaveData,Accountant_Options,Accountant_MinimapDB
@@ -12,6 +13,8 @@
 ## X-Website: https://github.com/tfmonk/Accountant/issues
 ## X-License: All rights reserved (See license)
 
+## X-Curse-Project-ID: 17648
+## X-Wago-ID: RBKpWq6E
 
 Libs\LibStub\LibStub.lua
 Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
