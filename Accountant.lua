@@ -1028,7 +1028,6 @@ function SC.SetLabels()
 		AccountantFrameSource:SetText(L["Character"]);
 		AccountantFrameIn:SetText(L["Money"]);
 		AccountantFrameOut:SetText(L["Updated"]);
-		AccountantFrameWarband:SetText(L["Warband Bank"]);
 		AccountantFrameTotalIn:SetText("");
 		AccountantFrameTotalOut:SetText("");
 		AccountantFrameTotalWarband:SetText(L["Warband Bank"]..":");
@@ -1064,7 +1063,6 @@ function SC.SetLabels()
 	AccountantFrameSource:SetText(L["Source"]);
 	AccountantFrameIn:SetText(L["Revenue"]);
 	AccountantFrameOut:SetText(L["Expenditures"]);
-	AccountantFrameWarband:SetText(L["Warband Bank"]);
 	AccountantFrameTotalIn:SetText(L["Revenue"]..":");
 	AccountantFrameTotalOut:SetText(L["Expenditures"]..":");
 	AccountantFrameTotalWarband:SetText(L["Warband Bank"]..":");

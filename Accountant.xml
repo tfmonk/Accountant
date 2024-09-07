@@ -63,18 +63,6 @@
 						</Anchor>
 					</Anchors>
 				</FontString>
-				<FontString name="$parentWarband" inherits="GameFontHighlightSmall">
-					<Size>
-						<AbsDimension x="150" y="14" />
-					</Size>
-					<Anchors>
-						<Anchor point="LEFT" relativeTo="$parentOut" relativePoint="RIGHT">
-							<Offset>
-								<AbsDimension x="0" y="0" />
-							</Offset>
-						</Anchor>
-					</Anchors>
-				</FontString>
 				<Texture file="Interface\AuctionFrame\UI-DialogBox-Border">
 					<Size>
 						<AbsDimension x="480" y="19" />
@@ -187,18 +175,6 @@
 					</Size>
 					<Anchors>
 						<Anchor point="LEFT" relativeTo="$parentIn" relativePoint="RIGHT">
-							<Offset>
-								<AbsDimension x="0" y="0" />
-							</Offset>
-						</Anchor>
-					</Anchors>
-				</FontString>
-				<FontString name="$parentWarband" inherits="GameFontHighlight" justifyH = "CENTER">
-					<Size>
-						<AbsDimension x="150" y="14" />
-					</Size>
-					<Anchors>
-						<Anchor point="LEFT" relativeTo="$parentOut" relativePoint="RIGHT">
 							<Offset>
 								<AbsDimension x="0" y="0" />
 							</Offset>

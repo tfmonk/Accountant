@@ -1,3 +1,8 @@
+v11.0.2
+
+- Remove extra frame that is not needed as was displaying text in the wrong location.
+
+----------------------------------------------------------------------------------------------------------
 v 11.0.1
 
 - Fix warband gold been added multiple times to total gold.
