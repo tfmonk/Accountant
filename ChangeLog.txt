@@ -1,3 +1,9 @@
+v11.0.3
+
+- Update logic for warband bank transactions, so deposits and withdrawals are not included in profit and loss
+
+----------------------------------------------------------------------------------------------------------
+
 v11.0.2
 
 - Remove extra frame that is not needed as was displaying text in the wrong location.
