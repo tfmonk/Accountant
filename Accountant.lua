@@ -1891,8 +1891,10 @@ function SC.OnEvent(event, arg1)
 		SC.bankopened = true
 	elseif event == "BANKFRAME_CLOSED" then
 		if not SC.warbandbankaction then
+			local tmpMode = SC.mode;
 			SC.mode = "BANK"
 			SC.UpdateLog();
+			SC.mode = tmpMode
 		end
 		SC.bankopened = false
 		SC.warbandbankaction = false
