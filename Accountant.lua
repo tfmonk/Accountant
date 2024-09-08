@@ -1891,11 +1891,9 @@ function SC.OnEvent(event, arg1)
 		SC.bankopened = true
 	elseif event == "BANKFRAME_CLOSED" then
 		if not SC.warbandbankaction then
-			local tmpMode = SC.mode;
 			SC.mode = "BANK"
-			SC.UpdateLog();
-			SC.mode = tmpMode
 		end
+		SC.UpdateLog();
 		SC.bankopened = false
 		SC.warbandbankaction = false
 		SC.mode = "";
@@ -1903,9 +1901,8 @@ function SC.OnEvent(event, arg1)
 		SC.bankcashafter = GetMoney();
 		SC.warbandbankaction = true
 		SC.bankwarbandcashafter = C_Bank.FetchDepositedMoney(2)
-		if not ((SC.bankwarbandcash - SC.bankwarbandcashafter) + (SC.bankcash - SC.bankcashafter)) == 0 then --likely warband bank deposit if they match/tab purchase if they dont?
-			SC.mode = "BANK"
-			SC.UpdateLog();		
+		if (((SC.bankwarbandcash - SC.bankwarbandcashafter) + (SC.bankcash - SC.bankcashafter)) == 0) then --likely warband bank deposit if they match/tab purchase if they dont?
+			SC.mode = "IGNORE"
 		end
 	elseif event == "PLAYER_MONEY" then
 		if not SC.bankopened then
