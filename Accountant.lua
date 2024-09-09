@@ -1006,6 +1006,7 @@ function SC.RegisterEvents(self)
 
 	self:RegisterEvent("BANKFRAME_CLOSED");
 	self:RegisterEvent("BANKFRAME_OPENED");
+	self:RegisterEvent('PLAYERBANKBAGSLOTS_CHANGED'); 
 
 end
 
@@ -1903,12 +1904,19 @@ function SC.OnEvent(event, arg1)
 		SC.mode = "";
 	elseif event == "BANKFRAME_OPENED" then
 		SC.bankcash = GetMoney();
-		SC.bankwarbandcash = C_Bank.FetchDepositedMoney(2)
+		SC.bankwarbandcash = C_Bank.FetchDepositedMoney(2);
 		SC.warbandbankaction = false;
 		SC.bankopened = true;
+	elseif event == "PLAYERBANKBAGSLOTS_CHANGED" then
 		SC.mode = "BANK";
-	elseif event == "BANKFRAME_CLOSED" then
 		SC.UpdateLog();
+		SC.mode = ""
+		SC.bankcash = GetMoney();
+		SC.bankwarbandcash = C_Bank.FetchDepositedMoney(2);
+	elseif event == "BANKFRAME_CLOSED" then
+		if not SC.warbandbankaction then
+			SC.UpdateLog();
+		end
 		SC.bankopened = false;
 		SC.warbandbankaction = false;
 		SC.mode = "";
@@ -1920,7 +1928,7 @@ function SC.OnEvent(event, arg1)
 		if (((SC.bankwarbandcash - SC.bankwarbandcashafter) + (SC.bankcash - SC.bankcashafter)) == 0) then --likely warband bank deposit if they match/tab purchase if they dont?
 			SC.mode = "IGNORE";
 			SC.UpdateLog();
-			SC.mode = "BANK";
+			SC.mode = "";
 		end
 	elseif event == "PLAYER_MONEY" then
 		if not SC.bankopened then
