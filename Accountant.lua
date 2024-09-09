@@ -1910,11 +1910,11 @@ function SC.OnEvent(event, arg1)
 	elseif event == "BANKFRAME_CLOSED" then
 		SC.UpdateLog();
 		SC.bankopened = false;
-		SC.warbandbankaction = false;	
+		SC.warbandbankaction = false;
 		SC.mode = "";
 	elseif event == "ACCOUNT_MONEY" then
 		SC.warbandbankaction = true;
-		SC.bankcashafter = GetMoney();	
+		SC.bankcashafter = GetMoney();
 		SC.bankwarbandcashafter = C_Bank.FetchDepositedMoney(2)
 	
 		if (((SC.bankwarbandcash - SC.bankwarbandcashafter) + (SC.bankcash - SC.bankcashafter)) == 0) then --likely warband bank deposit if they match/tab purchase if they dont?
