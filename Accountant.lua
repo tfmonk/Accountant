@@ -40,9 +40,9 @@ local tmpstr = "";
 --local cdate = date("%d/%m/%y");
 
 SC.verbose = false;
-SC.show_events = false -- could generate a lot of output!
-SC.show_setup = false
-SC.show_mode = false
+SC.show_events = false; -- could generate a lot of output!
+SC.show_setup = false;
+SC.show_mode = false;
 
 function SC.TableContainsValue(table, value)
 	if table and value then
@@ -678,6 +678,20 @@ end
 --[[ AccountantOptions.lua end
 --]]
 
+AddonCompartmentFrame:RegisterAddon({
+	text = "Accountant",
+	icon = "Interface/AddOns/Accountant/Artwork/AccountantButton.blp",
+	notCheckable = true,
+	func = function(_, menuInputData, _)
+		if  menuInputData.buttonName == "LeftButton" then
+			SC.LeftButton_OnClick();
+		else
+			if  menuInputData.buttonName == "RightButton" then
+				Settings.OpenToCategory("Accountant", true)
+			end
+		end
+	end
+})
 
 --[[ Data Broker section begin
 ]]
@@ -948,6 +962,7 @@ function SC.RegisterEvents(self)
 	self:RegisterEvent("MAIL_SHOW");
 	self:RegisterEvent("MAIL_INBOX_UPDATE");
 	self:RegisterEvent("MAIL_CLOSED");
+	self:RegisterEvent("PLAYER_INTERACTION_MANAGER_FRAME_HIDE");
 --	self:RegisterEvent("MAIL_SEND_INFO_UPDATE");
 --	self:RegisterEvent("MAIL_SEND_SUCCESS");
 
@@ -1838,6 +1853,8 @@ function SC.OnEvent(event, arg1)
 	elseif event == "MAIL_CLOSED" then
 		SC.mode = "";
 --		SC.show_events = false
+	elseif event == "PLAYER_INTERACTION_MANAGER_FRAME_HIDE" then
+		SC.mode = "";
 	elseif event == "TRAINER_SHOW" then
 		SC.mode = "TRAIN";
 	elseif event == "TRAINER_CLOSED" then
@@ -1887,22 +1904,23 @@ function SC.OnEvent(event, arg1)
 	elseif event == "BANKFRAME_OPENED" then
 		SC.bankcash = GetMoney();
 		SC.bankwarbandcash = C_Bank.FetchDepositedMoney(2)
-		SC.warbandbankaction = false
-		SC.bankopened = true
+		SC.warbandbankaction = false;
+		SC.bankopened = true;
+		SC.mode = "BANK";
 	elseif event == "BANKFRAME_CLOSED" then
-		if not SC.warbandbankaction then
-			SC.mode = "BANK"
-		end
 		SC.UpdateLog();
-		SC.bankopened = false
-		SC.warbandbankaction = false
+		SC.bankopened = false;
+		SC.warbandbankaction = false;	
 		SC.mode = "";
 	elseif event == "ACCOUNT_MONEY" then
-		SC.bankcashafter = GetMoney();
-		SC.warbandbankaction = true
+		SC.warbandbankaction = true;
+		SC.bankcashafter = GetMoney();	
 		SC.bankwarbandcashafter = C_Bank.FetchDepositedMoney(2)
+	
 		if (((SC.bankwarbandcash - SC.bankwarbandcashafter) + (SC.bankcash - SC.bankcashafter)) == 0) then --likely warband bank deposit if they match/tab purchase if they dont?
-			SC.mode = "IGNORE"
+			SC.mode = "IGNORE";
+			SC.UpdateLog();
+			SC.mode = "BANK";
 		end
 	elseif event == "PLAYER_MONEY" then
 		if not SC.bankopened then
@@ -2281,20 +2299,20 @@ function SC.UpdateLog()
 		else
 			postage = 30;
 		end
-
 		-- if xfer between the player's chars or outbid auction back to the sender's totals
-		for key,logmode in next,SC.log_modes do
-			Accountant_SaveData[SC.sender]["data"][SC.refund_mode][logmode].Out = Accountant_SaveData[SC.sender]["data"][SC.refund_mode][logmode].Out - (diff - postage);
-			if (Accountant_SaveData[SC.sender]["data"][SC.refund_mode][logmode].Out < 0) then
-				Accountant_SaveData[SC.sender]["data"][SC.refund_mode][logmode].Out = 0;
+		if not SC.warbandbankaction then
+			for key,logmode in next,SC.log_modes do
+				Accountant_SaveData[SC.sender]["data"][SC.refund_mode][logmode].Out = Accountant_SaveData[SC.sender]["data"][SC.refund_mode][logmode].Out - (diff - postage);
+				if (Accountant_SaveData[SC.sender]["data"][SC.refund_mode][logmode].Out < 0) then
+					Accountant_SaveData[SC.sender]["data"][SC.refund_mode][logmode].Out = 0;
+				end
 			end
 		end
-
-			if SC.verbose then
-				SC.Print("IGNORE: "..SC.NiceCash(diff, false, false)
-					.." mode = "..SC.refund_mode .." refundee = "..SC.sender);
-			end
+		if SC.verbose then
+			SC.Print("IGNORE: "..SC.NiceCash(diff, false, false)
+				.." mode = "..SC.refund_mode .." refundee = "..SC.sender);
 		end
+	end
 
 	if AccountantFrame:IsVisible() then
 		SC.OnShow();
