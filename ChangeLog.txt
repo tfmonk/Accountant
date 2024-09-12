@@ -1,6 +1,7 @@
 v11.0.3
 
-- Update logic for warband bank transactions, so deposits and withdrawals are not included in profit and loss
+- Update logic for warband bank transactions, so deposits and withdrawals are not included in profit and loss.
+- Add Accountant to the addon compartment frame.
 
 ----------------------------------------------------------------------------------------------------------
 
