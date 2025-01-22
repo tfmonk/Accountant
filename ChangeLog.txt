@@ -1,3 +1,9 @@
+v 11.0.4
+
+- Changed Interface version to 110007
+
+----------------------------------------------------------------------------------------------------------
+
 v11.0.3
 
 - Update logic for warband bank transactions, so deposits and withdrawals are not included in profit and loss.
