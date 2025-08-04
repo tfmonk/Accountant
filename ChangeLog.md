@@ -1,3 +1,11 @@
+v 11.0.6
+
+- Update back event due to 11.2 changes for player banks no longer having bags slots
+- reduce use of global variables within code
+- Changed Interface version to 110200
+
+----------------------------------------------------------------------------------------------------------
+
 v 11.0.5
 
 - Changed Interface version to 110100
