@@ -1,6 +1,6 @@
 v 11.0.6
 
-- Update back event due to 11.2 changes for player banks no longer having bags slots
+- Update PLAYERBANKBAGSLOTS_CHANGED event to PLAYERBANKSLOTS_CHANGED due to 11.2 changes for player banks no longer having bags slots
 - Reduce use of global variables within code
 - Change changelog to markdown file
 - Changed Interface version to 110200
