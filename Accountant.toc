@@ -1,6 +1,6 @@
-## Interface: 110100
+## Interface: 110200
 ## Title: Accountant
-## Version: 11.0.5
+## Version: 11.0.6
 ## Author: tfmonk 
 ## Notes: Logs where your WoW gold goes
 ## IconTexture: Interface/AddOns/Accountant/Artwork/AccountantButton.blp

@@ -225,8 +225,8 @@ function SC.Button_makename()
 --
 -- Create the name so the right data can be looked up.
 --
-	acc_realm = GetRealmName():gsub('-',"");
-	acc_name = acc_realm..SC.DIVIDER..UnitName("player");
+	local acc_realm = GetRealmName():gsub('-',"");
+	local acc_name = acc_realm..SC.DIVIDER..UnitName("player");
 	return acc_name;
 end
 
@@ -911,7 +911,7 @@ function SC.LDB_GetTooltipDetail(tooltip)
 
         for player in next,Accountant_SaveData do
             -- Find the one player or all players of the faction(s) requested
-            faction = Accountant_SaveData[player]["options"]["faction"]
+            local faction = Accountant_SaveData[player]["options"]["faction"]
 			if (MatchRealm(player, SC.Realm) ~= nil)
 				and (( (faction == L["Alliance"])
                      and (SC.ShowAlliance == true) )
@@ -1006,7 +1006,7 @@ function SC.RegisterEvents(self)
 
 	self:RegisterEvent("BANKFRAME_CLOSED");
 	self:RegisterEvent("BANKFRAME_OPENED");
-	self:RegisterEvent('PLAYERBANKBAGSLOTS_CHANGED'); 
+	self:RegisterEvent('PLAYERBANKSLOTS_CHANGED'); 
 
 end
 
@@ -1088,7 +1088,7 @@ function SC.SetLabels()
 	AccountantFrameTotalFlow:SetText(L["Net Profit / Loss"]..":");
 
 	-- Row Labels (auto generate)
-	InPos = 1
+	local InPos = 1
 	for key,value in next,SC.data do
 		SC.data[key].InPos = InPos;
 		getglobal("AccountantFrameRow"..InPos.."Title"):SetText(SC.data[key].Title);
@@ -1264,7 +1264,7 @@ function SC.LoadSavedData() -- Load the account data of the character that is be
 	SC.ShowAlliance = Accountant_SaveData[SC.Button_makename()]["options"].showAlliance
 	SC.ShowHorde = Accountant_SaveData[SC.Button_makename()]["options"].showHorde
 
-	order = 1;
+	local order = 1;
 	for key,value in next,SC.data do
 		if Accountant_SaveData[Accountant.player]["data"][key] == nil then
 			Accountant_SaveData[Accountant.player]["data"][key] = {}
@@ -1640,6 +1640,7 @@ function SC.CharDropDown_OnClick(self)
 --
 	local val = self:GetID();
 	local id = self.value
+	local searchChar
 
 	UIDropDownMenu_SetSelectedID(Accountant_CharDropDown, val);
 
@@ -1800,7 +1801,7 @@ function SC.OnEvent(event, arg1)
         end
 	elseif event == "MERCHANT_CLOSED" then
 		SC.mode = "";
-		Account_RepairCost = 0;
+		local Account_RepairCost = 0;
 	elseif event == "MERCHANT_UPDATE" then
 		-- Could have bought something before or after repair
 		SC.repair_money = GetMoney();
@@ -1907,7 +1908,8 @@ function SC.OnEvent(event, arg1)
 		SC.bankwarbandcash = C_Bank.FetchDepositedMoney(2);
 		SC.warbandbankaction = false;
 		SC.bankopened = true;
-	elseif event == "PLAYERBANKBAGSLOTS_CHANGED" then
+		SC.mode = "BANK";
+	elseif event == "PLAYERBANKSLOTS_CHANGED" then
 		SC.mode = "BANK";
 		SC.UpdateLog();
 		SC.mode = ""
@@ -1962,7 +1964,7 @@ function SC.NiceCash(value, show_zero, show_neg)
 	local cc = "|cFFFF6600"
 	local amount = (value or 0)
 	local cash = (amount or 0)
-
+	local k
 	local goldcom = gold
 
 	if show_neg then
@@ -2028,16 +2030,16 @@ end
 
 function SC.WeekStart() -- Find and return the chosen week start
 
-	oneday = 86400;
-	ct = time();
-	dt = date("*t",ct);
-	thisDay = dt["wday"];
+	local oneday = 86400;
+	local ct = time();
+	local dt = date("*t",ct);
+	local thisDay = dt["wday"];
 	while thisDay ~= Accountant_SaveData[Accountant.player]["options"].weekstart do
 		ct = ct - oneday;
 		dt = date("*t",ct);
 		thisDay = dt["wday"];
 	end
-	wdate = date(nil,ct);
+	local wdate = date(nil,ct);
 	return string.sub(wdate,0,8);
 end
 
@@ -2056,7 +2058,7 @@ function SC.GetDetailForToons(mode, for_display)
 
         for player in next,Accountant_SaveData do
             -- Find the one player or all players of the faction(s) requested
-            faction = Accountant_SaveData[player]["options"]["faction"]
+            local faction = Accountant_SaveData[player]["options"]["faction"]
             if (MatchRealm(player, SC.Realm) ~= nil)
                and (( (faction == L["Alliance"])
                      and (SC.ShowAlliance == true) )
@@ -2074,7 +2076,7 @@ function SC.GetDetailForToons(mode, for_display)
         TotalOut = TotalOut + TotalRowOut;
 
         if for_display then
-            row = getglobal("AccountantFrameRow" ..SC.data[key].InPos.."In");
+            local row = getglobal("AccountantFrameRow" ..SC.data[key].InPos.."In");
             row:SetText(SC.NiceCash(TotalRowIn, false, false));
 
             row = getglobal("AccountantFrameRow" ..SC.data[key].InPos.."Out");
@@ -2125,7 +2127,7 @@ function SC.GetCashForAllToons(for_display)
 
 		for char,charvalue in next,Accountant_SaveData do
 			-- Find all players of the faction(s) requested
-			faction = Accountant_SaveData[char]["options"]["faction"]
+			local faction = Accountant_SaveData[char]["options"]["faction"]
 			if faction then
 			else
 				faction = "not set"
@@ -2136,8 +2138,8 @@ function SC.GetCashForAllToons(for_display)
 					or ( (faction == L["Horde"])
 						and (SC.ShowHorde == true) ))
 			then
-				str_pos = strfind(char, SC.DIVIDER)
-				strtmp = strsub(char, str_pos+1) -- remove the realm and dash
+				local str_pos = strfind(char, SC.DIVIDER)
+				local strtmp = strsub(char, str_pos+1) -- remove the realm and dash
 				if for_display and (i <= SC.MaxRows) then
 					getglobal("AccountantFrameRow" ..i.."Title"):SetText(strtmp);
 				end
@@ -2331,7 +2333,7 @@ function SC.UpdateOther(old_gold, new_gold)
 --
 -- Update the Accountant data based on the current gold versus the last saved gold
 --
-	diff = new_gold - old_gold;
+	local diff = new_gold - old_gold;
 	if diff == 0 or diff == nil then
 		return;
 	end
@@ -2416,6 +2418,7 @@ end
 function Accountant_GetCurrentBal(logmode, all_toons)
    local TotalIn = 0
    local TotalOut = 0
+   local cash
    local mode = "<nyl>"
 
 	 local showbuttonTotalIn = 0
