@@ -1,3 +1,8 @@
+v 11.1.0
+
+- Bump toc to 120000
+- Fix opening Accountant options
+
 v 11.0.6
 
 - Update PLAYERBANKBAGSLOTS_CHANGED event to PLAYERBANKSLOTS_CHANGED due to 11.2 changes for player banks no longer having bags slots

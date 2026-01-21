@@ -1,4 +1,4 @@
-## Interface: 110200
+## Interface: 120000, 120001
 ## Title: Accountant
 ## Version: 11.0.6
 ## Author: tfmonk 

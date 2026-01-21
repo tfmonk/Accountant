@@ -687,7 +687,11 @@ AddonCompartmentFrame:RegisterAddon({
 			SC.LeftButton_OnClick();
 		else
 			if  menuInputData.buttonName == "RightButton" then
-				Settings.OpenToCategory("Accountant", true)
+				for _, category in ipairs(SettingsPanel:GetAllCategories()) do
+					if category:GetName() == "Accountant" then
+						Settings.OpenToCategory(category:GetID())
+					end
+				end
 			end
 		end
 	end
@@ -706,7 +710,11 @@ SC.LDBIcon = LibStub("LibDataBroker-1.1", true) and LibStub("LibDBIcon-1.0", tru
 				SC.LeftButton_OnClick();
 			else
 				if button == "RightButton" then
-					Settings.OpenToCategory("Accountant", true)
+					for _, category in ipairs(SettingsPanel:GetAllCategories()) do
+						if category:GetName() == "Accountant" then
+							Settings.OpenToCategory(category:GetID())
+						end
+					end
 				end
 			end
 		end,
