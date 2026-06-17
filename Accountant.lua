@@ -32,6 +32,8 @@ SC.can_repair = "";
 SC.repair_cost, SC.repair_money = 0,0;
 SC.bankopened = false;
 SC.warbandbankaction = false;
+SC.bankcash = 0;
+SC.bankwarbandcash = 0;
 
 local Accountant_RepairAllItems_old;
 local Accountant_CursorHasItem_old;
@@ -1941,10 +1943,12 @@ function SC.OnEvent(event, arg1)
 			SC.mode = "";
 		end
 	elseif event == "PLAYER_MONEY" then
-		if not SC.bankopened then
-			SC.UpdateLog();
-			SC:LDB_Update()
-		end
+ 		C_Timer.After(0.1, function()
+			if not SC.bankopened then
+				SC.UpdateLog();
+				SC:LDB_Update()
+			end
+		end)
 	end
 	if SC.verbose and SC.mode ~= oldmode then
         SC.Print("Accountant mode changed to '"..SC.mode.."'");
@@ -2102,7 +2106,6 @@ function SC.GetCashForToons()
 	local faction = ""
 	local cachebox = 0
 	local alltotal = 0
-	local warbandBankBalance = C_Bank.FetchDepositedMoney(2)
 
    -- collect the total for the toon(s) selected
     for player in next,Accountant_SaveData do
@@ -2191,7 +2194,7 @@ function SC.ShowValues() -- Set the Accountant values based on the user selectio
 	-- Make sure we start fresh
 	alltotal = 0;
 
-	TotalWarband = C_Bank.FetchDepositedMoney(2);
+	local TotalWarband = C_Bank.FetchDepositedMoney(2);
 
 	SC.SetLabels();
 	if SC.current_tab ~= 5 then
