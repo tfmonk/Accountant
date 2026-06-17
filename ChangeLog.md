@@ -1,3 +1,9 @@
+v 11.1.1
+
+- Bump toc to 120007
+- Update Local esES
+- Some performance fixes for accountant
+
 v 11.1.0
 
 - Bump toc to 120000
